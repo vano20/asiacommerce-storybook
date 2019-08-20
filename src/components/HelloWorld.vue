@@ -1,6 +1,8 @@
 <template>
   <div class="hello">
     <h1>{{ msg }}</h1>
+
+    <div class="p-2 shadow-md">this div have shadow</div>
     <p>
       For a guide and recipes on how to configure / customize this project,<br />
       check out the
@@ -36,6 +38,7 @@
       </li>
     </ul>
     <h3>Essential Links</h3>
+    <svg-icon name="currency" />
     <ul>
       <li>
         <a href="https://vuejs.org" target="_blank" rel="noopener">Core Docs</a>
@@ -95,10 +98,16 @@
 </template>
 
 <script>
+// import "../assets/icons/compiled/fire"
+import SvgIcon from "./BaseIcon.vue";
+
 export default {
   name: "HelloWorld",
   props: {
     msg: String
+  },
+  components: {
+    SvgIcon
   }
 };
 </script>
