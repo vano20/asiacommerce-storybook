@@ -1,6 +1,20 @@
 import { storiesOf } from "@storybook/vue";
+import { action } from "@storybook/addon-actions";
 
 import CardItem from "./CardItem";
+
+export const item = {
+  id: "1",
+  title: "Picking up some small pebbles, he dropped them into the pitcher one by one",
+  seller: "Seller name should be here",
+  price: 94415.532,
+  hotProduct: false,
+  imported: false
+};
+
+export const methods = {
+  onImportedItem: action("onImported")
+}
 
 // storiesOf("CardItem", module).add("default", () => {
 //   return {
@@ -10,9 +24,44 @@ import CardItem from "./CardItem";
 // });
 
 storiesOf("CardItem", module)
-  .add("default", () => "<card-item />")
-  // .add('with emoji', () => '<my-button>😀 😎 👍 💯</my-button>')
-  .add("as a component", () => ({
+  .add("Default", () => ({
     components: { CardItem },
-    template: "<card-item />"
+    template: "<card-item :item='item' />",
+    data: () => ({
+      item: {
+        ...item,
+        hotProduct: true,
+        imported: true
+      }
+    })
+  }))
+  .add("Stateless", () => ({
+    components: { CardItem },
+    template: "<card-item :item='item' />",
+    data: () => ({
+      item: { ...item }
+    })
+  }))
+  .add("Hot Product", () => ({
+    components: { CardItem },
+    template: "<card-item :item='item' />",
+    data: () => ({
+      item: {
+        ...item,
+        hotProduct: true,
+        seller: "Catty"
+      }
+    })
+  }))
+  .add("Imported", () => ({
+    components: { CardItem },
+    template: "<card-item :item='item' />",
+    data: () => ({
+      item: {
+        ...item,
+        imported: true,
+        seller: "Cats",
+        price: 10000.422
+      }
+    })
   }));

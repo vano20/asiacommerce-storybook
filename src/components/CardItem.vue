@@ -6,6 +6,7 @@
       <a
         class="label is-hot-product bg-orange-500 text-white"
         href="#0"
+        v-if="item.hotProduct"
       >
         <base-icon name="fire" height="31.44" />
         Hot Product
@@ -14,6 +15,7 @@
         <a
           class="label is-imported bg-green-300 absolute text-green-500 text-sm"
           href="#0"
+          v-if="item.imported"
         >
           Imported already
         </a>
@@ -26,13 +28,13 @@
       <div class="product-item-content pa2 ph3-ns pb3-ns">
         <div class="product-item-content-header">
           <div class="product-item-pricing px-2">
-            <strong class="text-orange-500">Rp94.415.532</strong>
+            <strong class="text-orange-500">Rp {{ formatMoney(this.item.price) }}</strong>
           </div>
         </div>
         <div class="product-item-content-main p-2">
           <div class="product-item-title h-10 overflow-hidden">
             <a href="#" title="Picking up some small pebbles, he dropped them into the pitcher one by one">
-              Picking up some small pebbles, he dropped them into the pitcher one by one
+              {{ this.item.title }}
             </a>
           </div>
         </div>
@@ -40,7 +42,7 @@
           <a href="#0" class="product-item-seller flex truncate">
             <img src="https://img12.jd.id/zhipu/nHBfsgAALwAAABsAKfI39AAABbA.png" alt="" class="product-item-seller-pic flex-none mr-2 w-5 rounded shadow border border-gray-400">
             <p class="product-item-seller-name flex-none">
-              Seller name should be here
+              {{ this.item.seller }}
             </p>
           </a>
         </div>
@@ -53,15 +55,15 @@
 <script>
 import BaseIcon from "./BaseIcon.vue"
 
+import { accountingHelperMixin } from "../helper/helperMethods"
+
 export default {
   name: "card-item",
   components: {
     BaseIcon
   },
+  mixins: [accountingHelperMixin],
   props: {
-    isImported: {
-      type: Boolean
-    },
     item: {
       type: Object
     }
