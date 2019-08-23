@@ -1,5 +1,8 @@
 <template>
-  <div class="product-item is-imported w-1/4 p-1">
+  <div
+    class="product-item w-1/4 p-1"
+    :class="{'is-imported' : item.imported} "
+  >
     <div
       class="card br2 center shadow-md rounded"
     >
@@ -19,7 +22,7 @@
       </a>
       <div class="product-item-cover relative">
         <a
-          class="label is-imported bg-green-300 absolute text-green-500 text-sm"
+          class="label is-imported bg-accent-300 absolute text-accent-500 text-sm"
           href="#0"
           v-if="item.imported"
         >
@@ -58,9 +61,9 @@
 </template>
 
 <script>
-import BaseIcon from "./BaseIcon.vue"
+import BaseIcon from "../ui/BaseIcon.vue"
 
-import { accountingHelperMixin } from "../helper/helperMethods"
+import { accountingHelperMixin } from "../../helper/helperMethods"
 
 export default {
   name: "card-item",
@@ -113,7 +116,7 @@ export default {
   }
 
   &.is-imported > .card {
-    box-shadow: inset 0px 0px 2px 4px theme(colors.green.300);
+    box-shadow: inset 0px 0px 2px 4px theme(colors.accent.300);
   }
 
   &-content {
@@ -144,14 +147,14 @@ export default {
   left: 6px;
   z-index: 1;
   margin-left: 9px;
-  background: theme(colors.orange.400);
-  background: linear-gradient(90deg, theme(colors.orange.400) 0%, theme(colors.orange.500) 100%);
+  background: theme(colors.primary.400);
+  background: linear-gradient(90deg, theme(colors.primary.400) 0%, theme(colors.primary.500) 100%);
   padding-left: 16px;
   padding-right: 10px;
   @apply shadow;
 
   svg {
-    fill: theme(colors.orange.500);
+    fill: theme(colors.primary.500);
     position: absolute;
     width: 22px;
     height: 26px;

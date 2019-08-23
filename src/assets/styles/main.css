@@ -6,6 +6,19 @@
 
 @import "./bagdes-n-labels.css";
 
+@import url('https://fonts.googleapis.com/css?family=Fira+Sans:300,300i,400,400i,500,500i,600,600i,700,700i&display=swap');
+
+
+
+body {
+  font-family: theme(fontFamily.sans);
+  color: theme(colors.gray.800);
+}
+
+button, a.btn {
+  @apply text-gray-600;
+}
+
 .svg-icon {
   display: inline-block;
   width: 16px;

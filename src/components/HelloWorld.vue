@@ -99,7 +99,7 @@
 
 <script>
 // import "../assets/icons/compiled/fire"
-import SvgIcon from "./BaseIcon.vue";
+import SvgIcon from "./ui/BaseIcon.vue";
 
 export default {
   name: "HelloWorld",
