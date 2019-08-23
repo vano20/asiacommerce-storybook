@@ -9,7 +9,8 @@ export const item = {
   seller: "Seller name should be here",
   price: 94415.532,
   hotProduct: false,
-  imported: false
+  imported: false,
+  importingToProduct: false
 };
 
 export const methods = {
@@ -62,6 +63,18 @@ storiesOf("CardItem", module)
         imported: true,
         seller: "Cats",
         price: 10000.422
+      }
+    })
+  }))
+  .add("Importing", () => ({
+    components: { CardItem },
+    template: "<card-item :item='item' />",
+    data: () => ({
+      item: {
+        ...item,
+        seller: "Cats",
+        price: 10000.422,
+        importingToProduct: true
       }
     })
   }));

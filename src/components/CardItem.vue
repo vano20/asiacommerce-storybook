@@ -3,6 +3,12 @@
     <div
       class="card br2 center shadow-md rounded"
     >
+      <div 
+        class="shadow w-full bg-grey-light product-item-cover"
+        v-if="item.importingToProduct"
+      >
+        <div class="bg-blue-400 text-xs leading-none py-1 text-center" :style="getPerecentage"></div>
+      </div>
       <a
         class="label is-hot-product bg-orange-500 text-white"
         href="#0"
@@ -48,7 +54,6 @@
         </div>
       </div>
     </div>
-
   </div>
 </template>
 
@@ -63,9 +68,31 @@ export default {
     BaseIcon
   },
   mixins: [accountingHelperMixin],
+  data() {
+    return {
+      percentage: 0
+    }
+  },
   props: {
     item: {
       type: Object
+    }
+  },
+  mounted() {
+    setInterval(() => {
+      // + 10 as step per 2 second
+      this.percentage = Math.min(this.percentage + 10, 100)
+
+      // Hide progress bar if 100%
+      if (this.percentage === 100) this.item.importingToProduct = false
+    }, 2000) // -> 2000 ms === 2 second
+  },
+  computed: {
+    getPerecentage () {
+      let style = {
+        "width": this.percentage + "%"
+      }
+      return style
     }
   }
 };
