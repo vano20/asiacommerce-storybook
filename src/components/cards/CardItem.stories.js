@@ -65,16 +65,4 @@ storiesOf("CardItem", module)
         price: 10000.422
       }
     })
-  }))
-  .add("Importing", () => ({
-    components: { CardItem },
-    template: "<card-item :item='item' />",
-    data: () => ({
-      item: {
-        ...item,
-        seller: "Cats",
-        price: 10000.422,
-        importingToProduct: true
-      }
-    })
   }));
