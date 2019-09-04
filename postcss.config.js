@@ -10,7 +10,7 @@ module.exports = {
     // require('precss'),
     // require('postcss-each-variables'),
     require('postcss-nested'),
-    require('postcss-color-function'),
+    require('postcss-color-alpha'),
     require('autoprefixer'),
     // ...
   ]

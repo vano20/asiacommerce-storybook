@@ -13,6 +13,7 @@
   "dependencies": {
     "core-js": "^2.6.5",
     "postcss-at-rules-variables": "^0.1.8",
+    "postcss-color-alpha": "^2.0.0",
     "postcss-color-function": "^4.1.0",
     "postcss-conditionals": "^2.1.0",
     "postcss-custom-properties": "^9.0.2",
@@ -45,6 +46,9 @@
     "babel-preset-vue": "^2.0.2",
     "eslint": "^5.16.0",
     "eslint-plugin-vue": "^5.0.0",
+    "svg-to-vue-component": "^0.3.8",
+    "vue-svg-loader": "^0.12.0",
+    "vue-svgicon": "^3.2.6",
     "vue-template-compiler": "^2.6.10"
   }
 }

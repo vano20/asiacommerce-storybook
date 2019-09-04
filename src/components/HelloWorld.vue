@@ -11,6 +11,11 @@
       >.
     </p>
     <h3>Installed CLI Plugins</h3>
+    <a href="">
+      <LogoFire />
+      fire
+    </a>
+    <LogoBell />
     <ul>
       <li>
         <a
@@ -100,6 +105,8 @@
 <script>
 // import "../assets/icons/compiled/fire"
 import SvgIcon from "./ui/BaseIcon.vue";
+import LogoFire from "../../public/assets/fire.svg";
+import LogoBell from "../../src/assets/icons/bell.svg";
 
 export default {
   name: "HelloWorld",
@@ -107,7 +114,9 @@ export default {
     msg: String
   },
   components: {
-    SvgIcon
+    SvgIcon,
+    LogoFire,
+    LogoBell
   }
 };
 </script>

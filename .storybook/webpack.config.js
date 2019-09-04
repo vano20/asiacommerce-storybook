@@ -3,7 +3,7 @@ const path = require('path');
 const pathToInlineSvg = path.resolve(__dirname, '../src/assets/icons');
 
 // Export a function. Accept the base config as the only param.
-module.exports = ({ config, mode }) => {
+module.exports = ({ config }) => {
 
   const rules = config.module.rules;
 
@@ -15,6 +15,7 @@ module.exports = ({ config, mode }) => {
   //     'react-native': 'react-native-web',
   //   },
   // };
+  
 
   /* PostCSS Support */
   rules.push({
@@ -41,7 +42,23 @@ module.exports = ({ config, mode }) => {
     include: path.resolve(__dirname, '../'),
   });
 
-  
+
+  rules.push({
+    test: /\.svg$/,
+    loader: "vue-svg-loader",
+    options: {
+      svgo: {
+        plugins: [{ removeDimensions: true }, { removeViewBox: false }]
+      }
+    }
+  });
+
+  rules.forEach(function(data, key) {
+    if (data.test.toString().indexOf('svg|') >= 0) {
+      config.module.rules[key].test = /\.(ico|jpg|jpeg|png|gif|eot|otf|webp|ttf|woff|woff2|cur|ani)(\?.*)?$/;
+      return false;
+    }
+  });
 
   /* TypeScript Support */
   // config.module.rules.push({

@@ -1,16 +1,19 @@
 import { storiesOf } from "@storybook/vue";
 import { action } from "@storybook/addon-actions";
 
-import CardItem from "./CardItem";
+import CardItem from "../src/components/cards/CardItem";
 
 export const item = {
   id: "1",
   title: "Picking up some small pebbles, he dropped them into the pitcher one by one",
   seller: "Seller name should be here",
+  image: "http://placekitten.com/g/600/600",
   price: 94415.532,
+  priceOld: 124533.53,
   hotProduct: false,
   imported: false,
-  importingToProduct: false
+  importingToProduct: false,
+  wholesale: false
 };
 
 export const methods = {
@@ -25,14 +28,13 @@ export const methods = {
 // });
 
 storiesOf("CardItem", module)
-  .add("Default", () => ({
+  .add("Wholesale product", () => ({
     components: { CardItem },
     template: "<card-item :item='item' />",
     data: () => ({
       item: {
         ...item,
-        hotProduct: true,
-        imported: true
+        wholesale: true
       }
     })
   }))
