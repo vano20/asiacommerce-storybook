@@ -1,4 +1,4 @@
-import PageCatalog from "@/pages/PageCatalog";
+import PageCatalog from "@/views/PageCatalog/PageIndex";
 
 export default [
   {
@@ -8,9 +8,6 @@ export default [
     alias: "/catalog",
     name: "PageCatalog",
     meta: { layout: "has-auth" },
-    component: PageCatalog,
-    // meta: {
-    //   middlewares: [RequiresAuth]
-    // }
+    component: PageCatalog
   }
 ];

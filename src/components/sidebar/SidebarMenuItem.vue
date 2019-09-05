@@ -1,15 +1,13 @@
 <template>
-  <div :class="['text-gray-500', { 'is-active': item.isActive }]" >
-    <div v-if="item.isSeparator" class="sidebar-menu-separator" />
-    <a
-      v-else
-      href=""
-      class="block relative hover:text-gray-700 hover:bg-primary-100 px-4 py-3"
-    >
-      <dynamic-icon :icon="item.icon" />
-      <p class="inline-block px-1">{{ item.label }}</p>
-    </a>
-  </div>
+  <!-- <div v-if="item.isSeparator" class="sidebar-menu-separator" /> -->
+  <!-- v-else -->
+  <router-link
+    :to="item.path"
+    class="text-gray-500 block relative hover:text-gray-700 hover:bg-primary-100 px-4 py-3"
+  >
+    <dynamic-icon :icon="item.icon" />
+    <span class="inline-block pl-2">{{ item.title }}</span>
+  </router-link>
 </template>
 
 <script>
@@ -24,9 +22,6 @@ export default {
     item: {
       type: Object,
       required: true
-    },
-    icon: {
-      type: String
     }
   }
 };
@@ -34,16 +29,14 @@ export default {
 
 <style lang="css" scoped>
 
-.is-active {
+.router-link-exact-active {
   @apply rounded-r;
 
-  & > a {
   @apply text-primary-500;
     &:before {
       content: '';
       @apply bg-primary-400 w-1 h-full rounded-r absolute inset-y-0 left-0;
     }
-  }
 }
 
 .sidebar-menu-separator {

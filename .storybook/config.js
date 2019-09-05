@@ -5,8 +5,8 @@ import '../src/assets/styles/main.css';
 
 import WelcomeStorybook from './WelcomeStorybook.vue'
 import ColorSwatch from './ColorSwatch.vue'
-import MessageStory from './MessageStory.vue'
-import SidebarStory from './SidebarStory.vue'
+import MessageStory from '../stories/MessageStory.vue'
+import SidebarStory from '../stories/SidebarStory.vue'
 import TheNavbar from '../src/components/navbar/TheNavbar.vue'
 import CatalogCategoryList from '../src/components/categories/CatalogCategoryList.vue'
 import SvgIcon from '../src/components/ui/SvgIcon.vue'

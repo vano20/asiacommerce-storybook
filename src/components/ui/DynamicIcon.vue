@@ -11,18 +11,12 @@ export default {
     }
   },
   computed: {
-    importIcon () {
-      return () => import(
-        /* webpackChunkName: "icons" */
-        /* webpackMode: "lazy-once" */ 
-        // `./icons/${this.icon}.svg`
-        `../../../src/assets/icons/${this.icon}.svg`
-      )
-    },
+    importIcon() {
+      return () =>
+        import(/* webpackChunkName: "icons" */
+        /* webpackMode: "lazy-once" */
+        `../../../src/assets/icons/${this.icon}.svg`);
+    }
   }
-}
+};
 </script>
-
-<style>
-
-</style>

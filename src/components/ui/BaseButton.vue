@@ -1,8 +1,11 @@
 <template>
-    <!-- :class="[{ 'btn-solid': isSolid }, 'btn ' + variantClass]" -->
-    <!-- :class="[isSolid ? 'is-solid ' + variantClass : '' + variantClass ]" -->
   <component
-    :class="['btn ' + variantClass, sizeClass, { 'w-full' : isFullwidth }, { 'is-solid' : isSolid } ]"
+    :class="[
+      'btn ' + variantClass,
+      sizeClass,
+      { 'w-full': isFullwidth },
+      { 'is-solid': isSolid }
+    ]"
     :is="wrapType"
     :href="href"
     @click="callback($event)"
@@ -13,7 +16,7 @@
 
 <script>
 export default {
-  name: 'BaseButton',
+  name: "BaseButton",
   props: {
     type: {
       type: String,
@@ -33,11 +36,11 @@ export default {
     },
     variant: {
       type: String,
-      default: ''
+      default: ""
     },
     size: {
       type: String,
-      default: 'medium'
+      default: "medium"
     }
   },
   methods: {

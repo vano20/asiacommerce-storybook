@@ -1,5 +1,5 @@
 <template>
-  <div class="shadow navbar">
+  <div class="shadow navbar bg-white">
     <div class="flex items-center pr-4">
       <div class="flex-auto items-center">
         <figure class="px-2 py-1 inline-block" style="vertical-align:middle;">
