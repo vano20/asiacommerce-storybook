@@ -1,7 +1,4 @@
-import BaseButton from './BaseButton'
-import ButtonGroup from './ButtonGroup'
+import BaseButton from "./BaseButton";
+import ButtonGroup from "./ButtonGroup";
 
-export {
-  BaseButton,
-  ButtonGroup
-}
+export { BaseButton, ButtonGroup };

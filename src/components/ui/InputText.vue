@@ -1,7 +1,8 @@
 <template>
   <input
     type="text"
-    :class="'input border placeholder-gray-300 border-gray-300 rounded ' + sizeClass"
+    class="input border placeholder-gray-300 border-gray-300 rounded "
+    :class="sizeClass"
     :value="value"
     :placeholder="placeholder"
     @input="$emit('input', $event.target.value)"
@@ -14,7 +15,7 @@ export default {
   props: {
     size: {
       type: String,
-      default: 'medium'
+      default: "medium"
     },
     value: {
       type: String,
@@ -22,18 +23,18 @@ export default {
     },
     placeholder: {
       type: String,
-      default: 'Placeholder here'
+      default: "Placeholder here"
     }
   },
   computed: {
     sizeClass() {
-      return 'is-' + this.size.toLowerCase()
+      return "is-" + this.size.toLowerCase();
     }
   }
-}
+};
 </script>
 
-<style scoped>
+<style lang="css" scoped>
 
 input {
 
@@ -46,5 +47,4 @@ input {
     @apply border-gray-400 bg-white;
   }
 }
-
 </style>

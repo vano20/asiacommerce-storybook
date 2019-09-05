@@ -4,7 +4,7 @@
 
 <script>
 export default {
-  name: "SidebarIcon",
+  name: "DynamicIcon",
   props: {
     icon: {
       type: String

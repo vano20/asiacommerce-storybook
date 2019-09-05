@@ -1,12 +1,12 @@
 <template>
   <div>
-    Sidebar List
+    <h2>Page Catalog here</h2>
   </div>
 </template>
 
 <script>
 export default {
-  name: "SidebarList"
+  name: "PageCatalog"
 };
 </script>
 

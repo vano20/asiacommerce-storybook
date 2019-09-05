@@ -40,36 +40,34 @@ export default {
       default: 'medium'
     }
   },
-  data: {
-  },
   methods: {
     callback: function(e) {
-      this.$emit('click', e);
+      this.$emit("click", e);
     }
   },
   computed: {
     wrapType() {
       if (this.href) {
-        return 'a'
+        return "a";
       } else {
-        return 'button'
+        return "button";
       }
     },
-    variantClass () {
+    variantClass() {
       if (this.variant.length) {
-        return 'is-' + this.variant.toLowerCase()
+        return "is-" + this.variant.toLowerCase();
       } else {
-        return ''
+        return "";
       }
     },
     sizeClass() {
-      return 'is-' + this.size.toLowerCase()
+      return "is-" + this.size.toLowerCase();
     }
   }
-}
+};
 </script>
 
-<style>
+<style lang="css">
 
 
 /* @import "../../assets/styles/variables-base.css"; */
@@ -147,7 +145,6 @@ button {
 
     &:active {
       opacity: 1;
-      
     }
   }
 }
@@ -172,8 +169,4 @@ button {
     }
   }
 }
-
-
-
-
 </style>

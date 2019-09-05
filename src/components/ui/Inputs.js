@@ -1,7 +1,4 @@
-import InputText from './InputText';
-import InputGroup from './InputGroup';
+import InputText from "./InputText";
+import InputGroup from "./InputGroup";
 
-export {
-  InputText,
-  InputGroup
-}
+export { InputText, InputGroup };

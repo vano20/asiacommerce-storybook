@@ -13,7 +13,7 @@
         href="#0"
         v-if="item.hotProduct"
       >
-        <base-icon name="fire" height="31.44" />
+        <icon-fire />
         Hot Product
       </a>
       <div class="product-item-cover relative">
@@ -51,7 +51,7 @@
           </div>
           <div v-else>
             <base-button is-fullwidth variant="primary" isSolid>
-              <base-icon name="importProduct" />
+              <icon-import-product />
               Import to my product
             </base-button>
           </div>
@@ -116,16 +116,18 @@
 </template>
 
 <script>
-import BaseIcon from "../ui/BaseIcon.vue"
 import { BaseButton } from "../ui/Buttons"
+import IconFire from "../../../src/assets/icons/fire.svg";
+import IconImportProduct from "../../../src/assets/icons/import-product.svg";
 
 import { accountingHelperMixin } from "../../helper/helperMethods"
 
 export default {
   name: "card-item",
   components: {
-    BaseIcon,
-    BaseButton
+    BaseButton,
+    IconFire,
+    IconImportProduct
   },
   data () {
     return {

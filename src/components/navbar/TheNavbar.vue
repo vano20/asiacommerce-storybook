@@ -3,7 +3,11 @@
     <div class="flex items-center pr-4">
       <div class="flex-auto items-center">
         <figure class="px-2 py-1 inline-block" style="vertical-align:middle;">
-          <img src="https://ali.asiacommerce.net/img/ali-logo-asiacommerce-small.5db1336e.png" alt="" class="h-10">
+          <img
+            src="https://ali.asiacommerce.net/img/ali-logo-asiacommerce-small.5db1336e.png"
+            class="h-10"
+            alt="Asiacomerce (ALI) logo"
+          />
         </figure>
         <base-button class="navbar-btn">
           <icon-menu />
@@ -15,7 +19,7 @@
           <template slot="prepend">
             <icon-search />
           </template>
-          <input-text placeholder="Search something"  />
+          <input-text placeholder="Search something" />
           <template slot="append">
             <base-button>Search</base-button>
           </template>
@@ -26,18 +30,14 @@
           <IconCart />
         </base-button>
         <base-button class="navbar-btn">
-          <IconBell  />
+          <IconBell />
         </base-button>
       </div>
     </div>
-
-
-
   </div>
 </template>
 
 <script>
-
 import { InputText, InputGroup } from "../ui/Inputs";
 import { BaseButton } from "../ui/Buttons";
 
@@ -57,10 +57,10 @@ export default {
     IconCart,
     IconBell
   }
-}
+};
 </script>
 
-<style scoped>
+<style lang="css" scoped>
 
 .navbar-btn {
   @apply border-none shadow-none -my-2 py-3 px-4 text-gray-600;
@@ -90,7 +90,5 @@ export default {
   input {
     @apply rounded-l-full bg-gray-100 border-gray-200;
   }
-
 }
-
 </style>

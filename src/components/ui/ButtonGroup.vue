@@ -5,16 +5,14 @@
 </template>
 
 <script>
-
 export default {
   name: "ButtonGroup"
-}
+};
 </script>
 
-<style>
+<style lang="css">
 .button-group {
   display: inline-flex;
-  
   & > .btn,
   & > .btn-solid {
     @apply block rounded-none;

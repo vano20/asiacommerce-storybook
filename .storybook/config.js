@@ -8,7 +8,7 @@ import ColorSwatch from './ColorSwatch.vue'
 import MessageStory from './MessageStory.vue'
 import SidebarStory from './SidebarStory.vue'
 import TheNavbar from '../src/components/navbar/TheNavbar.vue'
-import CatalogCategory from '../src/components/categories/CatalogCategory.vue'
+import CatalogCategoryList from '../src/components/categories/CatalogCategoryList.vue'
 import SvgIcon from '../src/components/ui/SvgIcon.vue'
 
 storiesOf('WelcomeStorybook', module)
@@ -29,8 +29,8 @@ storiesOf('WelcomeStorybook', module)
   }));
 
 storiesOf('Categories', module)
-  .add('Catalog cateogry', () => ({
-    render: h => h(CatalogCategory),
+  .add('Catalog category', () => ({
+    render: h => h(CatalogCategoryList),
   }));
 
 storiesOf('Svg Icon', module)

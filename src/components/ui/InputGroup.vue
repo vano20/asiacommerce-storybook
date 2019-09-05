@@ -2,22 +2,18 @@
   <div class="input-group">
     <div
       v-if="$slots.prepend"
-      :class="['input-group-prepend', {'icon-inside':iconInside}]"
+      :class="['input-group-prepend', { 'icon-inside': iconInside }]"
     >
       <slot name="prepend" />
     </div>
     <slot />
-    <div
-      v-if="$slots.append"
-      class="input-group-append"
-    >
+    <div v-if="$slots.append" class="input-group-append">
       <slot name="append" />
     </div>
   </div>
 </template>
 
 <script>
-
 export default {
   name: "InputGroup",
   props: {
@@ -26,10 +22,10 @@ export default {
       default: false
     }
   }
-}
+};
 </script>
 
-<style>
+<style lang="css">
 .input-group {
   @apply flex relative items-stretch w-full;
 
@@ -72,7 +68,6 @@ export default {
     @apply flex items-center;
     margin-left: -1px;
     z-index: 1;
-    
 
     & > .btn,
     & > .btn-solid {
@@ -81,7 +76,6 @@ export default {
   }
 
   .icon-inside {
-
     svg {
       @apply text-gray-400 absolute flex self-center ml-2 z-10;
     }

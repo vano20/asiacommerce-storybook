@@ -4,20 +4,27 @@
       v-for="(category, idx) in categories"
       :key="idx"
       size="small"
-      class="m-1"
+      class="m-1 category-button"
     >
+      <dynamic-icon :icon="category.icon" />
       {{ category.label }}
+    </base-button>
+    <base-button size="small" class="category-button">
+      <dynamic-icon icon="dots-horizontal" class="dots" />
+      View all categories
     </base-button>
   </div>
 </template>
 
 <script>
 import {BaseButton} from "../ui/Buttons"
+import DynamicIcon from "../ui/DynamicIcon";
 
 export default {
-  name: "CatalogCategory",
+  name: "CatalogCategoryList",
   components: {
-    BaseButton
+    BaseButton,
+    DynamicIcon
   },
   data: () => {
     return {
@@ -44,15 +51,15 @@ export default {
         },
         {
           label: "Lifestyle & Accessories",
-          icon: "lifestyle-accessories"
+          icon: "lifestyle-accessory"
         },
         {
           label: "Machinery & Industrial Parts",
-          icon: "machinery-industry"
+          icon: "machine-industry"
         },
         {
           label: "Mens Fashion",
-          icon: "mens-fashion"
+          icon: "men-fashion"
         },
         {
           label: "Office & Stationery",
@@ -72,6 +79,20 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
+.category-button {
+  padding: .2rem .5rem;
 
+  svg {
+    width: 1rem;
+    height: 1rem;
+    vertical-align: top;
+    margin-right: 2px;
+  }
+
+  .dots {
+    width: .8rem;
+    padding-right: 2px;
+  }
+}
 </style>
