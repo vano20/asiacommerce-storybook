@@ -1,5 +1,5 @@
 <template>
-  <the-sidebar class="overflow-auto">
+  <div class="overflow-auto" style="width: 320px;">
     
     <sidebar-menu-item
       v-for="(menu, idx) in menus"
@@ -40,7 +40,7 @@
       </div>
       <p class="font-medium text-gray-300 pt-2">© 2019 Asiacommerce</p>
     </div>
-  </the-sidebar>
+  </div>
 </template>
 
 <script>
@@ -51,43 +51,38 @@ const setting = {
   isActive: false,
 }
 
-import { TheSidebar, SidebarMenuItem } from "../src/components/sidebar/sidebar"
+import { SidebarMenuItem } from "../src/components/sidebar"
 export default {
   name: "SidebarStory",
   components: {
-    TheSidebar,
     SidebarMenuItem
   },
   data: () => {
     return {
       menus: [
         {
-          label: "Catalog",
+          title: "Catalog",
           icon: "catalog"
         },
         {
-          label: "My Product",
+          title: "My Product",
           icon: "my-product",
           isActive: true,
-          iconWidth: "23.933"
         },
         {
-          label: "My Order",
+          title: "My Order",
           icon: "my-order",
-          iconWidth: "19.75"
         },
         {
-          label: "Platforms",
+          title: "Platforms",
           icon: "platforms",
-          iconWidth: "20.729"
         },
         {
           isSeparator: true
         },
         {
-          label: "Tracking",
+          title: "Tracking",
           icon: "tracking",
-          iconWidth: "23.985",
         },
         {
           isSeparator: true
@@ -95,7 +90,7 @@ export default {
       ],
       menus2: [
         {
-          label: "Setting",
+          title: "Setting",
           icon: "setting",
         },
       ]

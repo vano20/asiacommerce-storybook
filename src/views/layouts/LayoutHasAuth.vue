@@ -14,7 +14,7 @@
 
 <script>
 import TheNavbar from "../../components/navbar/TheNavbar";
-import { TheSidebar } from "../../components/sidebar/sidebar";
+import { TheSidebar } from "../../components/sidebar";
 import { headroom } from "vue-headroom";
 
 export default {
