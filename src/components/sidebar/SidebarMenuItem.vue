@@ -3,6 +3,8 @@
   <!-- v-else -->
   <router-link
     :to="item.path"
+    :data-wenk="item.title"
+    data-wenk-pos="right"
     class="text-gray-500 block relative hover:text-gray-700 hover:bg-primary-100 px-4 py-3"
   >
     <dynamic-icon :icon="item.icon" />

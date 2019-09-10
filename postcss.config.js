@@ -2,6 +2,7 @@ module.exports = {
   plugins: [
     // ...
     require('postcss-import'),
+    require('postcss-custom-properties'),
     require('postcss-mixins'),
     require('postcss-each'),
     require('postcss-at-rules-variables'),

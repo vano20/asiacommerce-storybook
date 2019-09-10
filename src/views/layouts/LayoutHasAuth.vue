@@ -33,12 +33,24 @@ body {
   background-color: theme(colors.gray.100);
 }
 </style>
-<style scoped>
+<style lang="css" scoped>
+
+:root {
+  /* --sidebar-width: 220px; */
+}
+
 .layout {
+
+  --sidebar-width: 220px;
   @apply bg-gray-100;
 
   .sidebar {
     position: fixed;
+    width: var(--sidebar-width);
+  }
+
+  main {
+    margin-left: var(--sidebar-width);
   }
 }
 </style>
