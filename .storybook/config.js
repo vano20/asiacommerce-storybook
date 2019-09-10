@@ -10,6 +10,7 @@ import SidebarStory from '../stories/SidebarStory.vue'
 import TheNavbar from '../src/components/navbar/TheNavbar.vue'
 import CatalogCategoryList from '../src/components/categories/CatalogCategoryList.vue'
 import SvgIcon from '../src/components/ui/SvgIcon.vue'
+import TheSwitch from '../src/components/ui/TheSwitch.vue'
 
 storiesOf('WelcomeStorybook', module)
   .add('Typography', () => ({
@@ -26,6 +27,24 @@ storiesOf('WelcomeStorybook', module)
   }))
   .add('Navbar', () => ({
     render: h => h(TheNavbar),
+  }))
+  .add('Switch', () => ({
+    components: {TheSwitch},
+    data () {
+      return {
+        checkbox1: false,
+        checkbox2: false,
+        checkbox3: true,
+      }
+    },
+    template: `
+      <div class="p-4">
+        <the-switch v-model="checkbox1"/>
+        <the-switch v-model="checkbox2" title="Title here" />
+        <the-switch v-model="checkbox3" :title="'auto enable ' + [checkbox3]" />
+        <the-switch disabled title="disable here" />
+      </div>
+    `
   }));
 
 storiesOf('Categories', module)

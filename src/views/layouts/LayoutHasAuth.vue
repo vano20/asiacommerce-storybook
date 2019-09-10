@@ -14,7 +14,7 @@
 
 <script>
 import TheNavbar from "../../components/navbar/TheNavbar";
-import { TheSidebar } from "../../components/sidebar/sidebar";
+import { TheSidebar } from "../../components/sidebar";
 import { headroom } from "vue-headroom";
 
 export default {
@@ -33,12 +33,24 @@ body {
   background-color: theme(colors.gray.100);
 }
 </style>
-<style scoped>
+<style lang="css" scoped>
+
+:root {
+  /* --sidebar-width: 220px; */
+}
+
 .layout {
+
+  --sidebar-width: 220px;
   @apply bg-gray-100;
 
   .sidebar {
     position: fixed;
+    width: var(--sidebar-width);
+  }
+
+  main {
+    margin-left: var(--sidebar-width);
   }
 }
 </style>

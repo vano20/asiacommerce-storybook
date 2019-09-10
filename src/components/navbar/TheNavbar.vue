@@ -1,19 +1,7 @@
 <template>
-  <div class="shadow navbar bg-white">
-    <div class="flex items-center pr-4">
-      <div class="flex-auto items-center">
-        <figure class="px-2 py-1 inline-block" style="vertical-align:middle;">
-          <img
-            src="https://ali.asiacommerce.net/img/ali-logo-asiacommerce-small.5db1336e.png"
-            class="h-10"
-            alt="Asiacomerce (ALI) logo"
-          />
-        </figure>
-        <base-button class="navbar-btn">
-          <icon-menu />
-        </base-button>
-      </div>
-
+  <div class="shadow navbar bg-white"> <!-- wrapper -->
+    <div class="flex items-center pr-4"> <!-- inner -->
+      <navbar-brand />
       <div class="flex-none">
         <input-group icon-inside class="navbar-input">
           <template slot="prepend">
@@ -25,7 +13,7 @@
           </template>
         </input-group>
       </div>
-      <div class="flex-none">
+      <div class="flex-none ml-2">
         <base-button class="navbar-btn">
           <IconCart />
         </base-button>
@@ -40,8 +28,8 @@
 <script>
 import { InputText, InputGroup } from "../ui/Inputs";
 import { BaseButton } from "../ui/Buttons";
+import NavbarBrand from "./NavbarBrand";
 
-import IconMenu from "../../../src/assets/icons/menu.svg";
 import IconCart from "../../../src/assets/icons/cart.svg";
 import IconBell from "../../../src/assets/icons/bell.svg";
 import IconSearch from "../../../src/assets/icons/search.svg";
@@ -51,25 +39,30 @@ export default {
   components: {
     InputText,
     InputGroup,
+    NavbarBrand,
     BaseButton,
     IconSearch,
-    IconMenu,
     IconCart,
     IconBell
   }
 };
 </script>
 
-<style lang="css" scoped>
-
-.navbar-btn {
+<style lang="css">
+button.navbar-btn {
   @apply border-none shadow-none -my-2 py-3 px-4 text-gray-600;
 
   &:hover {
-    @apply text-gray-700;
+    @apply text-gray-700 shadow-none;
+  }
+
+  &:active {
+    background-color: theme(colors.gray.200).6;
   }
 }
+</style>
 
+<style lang="css" scoped>
 .navbar-input {
   @apply mr-2;
 
