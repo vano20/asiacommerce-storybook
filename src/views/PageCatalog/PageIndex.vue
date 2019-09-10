@@ -5,7 +5,7 @@
 
     <!-- Card Item -->
     <div class="w-full bg-gray-200 h-auto">
-
+      {{ this.products }}
     </div>
   </div>
 </template>
@@ -18,7 +18,7 @@ import CatalogServices from "../../services/catalog";
 
 import category from "./Category";
 
-import { mapActions } from "vuex";
+import { mapActions, mapState } from "vuex";
 
 import catalogs from "../../store/modules/catalogs";
 
@@ -29,20 +29,26 @@ export default {
   },
   data() {
     return {
-      data: null,
-      products: []
+      data: null
     };
   },
 
   mounted() {
     this.login();
-    this.fetchCategories();
-    // this.getProducts();
+
+    // Get Products
+    this.fetchProducts();
+  },
+
+  computed: {
+    ...mapState({
+      products: state => state.catalogs.items
+    })
   },
 
   methods: {
     ...mapActions({
-      fetchCategories: "getCategories"
+      fetchProducts: "catalogs/fetchProduct"
     }),
 
     async login() {
@@ -85,16 +91,6 @@ export default {
         else window.localStorage.setItem("multiplier", "200");
       } catch (error) {
         console.log("error", error);
-      }
-    },
-
-    async getProducts() {
-      try {
-        const responseProducts = await CatalogServices.getCatalog();
-
-        this.products = responseProducts.data.data;
-      } catch (error) {
-        console.log("error", error.response);
       }
     }
   }
