@@ -33,11 +33,12 @@ export default {
     };
   },
 
-  mounted() {
+  async mounted() {
     this.login();
 
     // Get Products
-    this.fetchProducts();
+    await this.fetchProducts();
+    // console.log(this.products)
   },
 
   computed: {

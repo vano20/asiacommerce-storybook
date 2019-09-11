@@ -31,7 +31,7 @@ export default {
         };
 
         const responseProducts = await CatalogServices.getCatalog(opts);
-        console.log(responseProducts.data.data);
+        const productsIncluded = responseProducts.data.included;
         
         commit("ITEMS_RESET");
         
@@ -40,8 +40,11 @@ export default {
             id: products.attributes.id,
             imported: products.attributes.imported,
             name: products.attributes.title,
-            original_price: products.attributes.regular_price,
-            original_url: products.attributes.original_url
+            regular_price: products.attributes.regular_price,
+            original_url: products.attributes.original_url,
+            image: products.attributes.image,
+            sale_price: products.attributes.sale_price,
+            supplier_name: isEmpty(products.relationships.supplier) ? null : productsIncluded.relationships[products.relationships.supplier[0].id].attributes.name
           };
           commit("ITEMS_ADD", addProducts);
         });
