@@ -2,7 +2,7 @@ import BaseServices from "./baseServices";
 
 class CatalogServices extends BaseServices {
   async getCatalog(opts = {}) {
-    this.endPoint = "api/v2/products?include=variations";
+    this.endPoint = "api/v2/products?include=variations,supplier";
     return this.get(opts);
   }
 
