@@ -47,11 +47,11 @@
           </div>
           <div class="mb-6">
             <span class="text-gray-500">Base paragraph</span>
-            <p>In a spell of dry weather, when the Birds could find very little to drink, a thirsty Crow found a pitcher with a little water in it. But the pitcher was high and had a narrow neck, and no matter how he tried, the Crow could not reach the water. The poor thing felt as if he must die of thirst.</p>
+            <p>In a spell of dry weather, when the <a href="#0">Birds</a> could find <em>very little to drink</em>, a thirsty Crow found a pitcher with a little water in it. But the pitcher was high and had a narrow neck, and no matter how he tried, the <strong class="">Crow could not reach the water</strong>. The poor thing felt as if he must die of thirst.</p>
           </div>
           <div class="mb-6">
             <span class="text-gray-500">Paragraph with '.is-large' class</span>
-            <p class="is-large">In a spell of dry weather, when the Birds could find very little to drink, a thirsty Crow found a pitcher with a little water in it. But the pitcher was high and had a narrow neck, and no matter how he tried, the Crow could not reach the water. The poor thing felt as if he must die of thirst.</p>
+            <p class="is-large">In a spell of dry weather, when the Birds could find very little to drink, a thirsty <a href="#0">Crow</a> found a pitcher with a little water in it. But the pitcher was high and had a narrow neck, and no matter how he tried, the Crow could not reach the water. The poor thing felt as if he must die of thirst.</p>
           </div>
         </div>
         <!-- End of Paragraph -->

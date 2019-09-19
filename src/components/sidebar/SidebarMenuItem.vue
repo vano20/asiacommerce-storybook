@@ -5,7 +5,7 @@
     :to="item.path"
     :data-wenk="item.title"
     data-wenk-pos="right"
-    class="text-gray-500 block relative hover:text-gray-700 hover:bg-primary-100 px-4 py-3"
+    class="text-gray-600 block relative hover:text-gray-700 hover:bg-primary-100 px-4 py-3"
   >
     <dynamic-icon :icon="item.icon" />
     <span class="inline-block pl-2">{{ item.title }}</span>

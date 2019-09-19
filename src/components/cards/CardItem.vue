@@ -6,7 +6,7 @@
     @mouseleave="hover = false"
   >
     <div
-      class="card br2 center shadow-md rounded border"
+      class="card br2 center shadow-md rounded bg-white border"
     >
       <a
         class="label is-hot-product bg-orange-500 text-white"
@@ -61,7 +61,7 @@
       <div class="product-item-content">
         <div class="product-item-content-header flex px-2 items-center">
           <div class="product-item-pricing flex-auto">
-            <p class="text-primary-500 text-lg">Rp {{ formatMoney(this.item.price) }} <span class="text-sm text-gray-400 line-through">Rp.{{ formatMoney(this.item.priceOld) }}</span></p>
+            <p class="text-primary-500 text-lg">Rp {{ formatMoney(this.item.original_price) }} <span class="text-sm text-gray-400 line-through">Rp.{{ formatMoney(this.item.priceOld) }}</span></p>
             <!-- <div class="text-sm px-1 bg-danger-500 text-white rounded">5%</div> -->
           </div>
           <div class="flex-none">
@@ -72,14 +72,14 @@
         </div>
         <div class="product-item-content-main p-2">
           <div class="product-item-title h-10 overflow-hidden">
-            <a href="#" :title="this.item.title">
+            <a :href="this.item.original_url" :title="this.item.name">
               <span
                 v-if="item.wholesale"
                 class="label is-pink"
               >
                 Wholesale
               </span>
-              {{ this.item.title }}
+              {{ this.item.name }}
             </a>
           </div>
         </div>
@@ -87,7 +87,7 @@
           <a href="#0" class="product-item-seller flex truncate">
             <img src="https://img12.jd.id/zhipu/nHBfsgAALwAAABsAKfI39AAABbA.png" alt="" class="product-item-seller-pic flex-none mr-2 w-5 rounded shadow border border-gray-300">
             <p class="product-item-seller-name flex-none text-gray-500">
-              {{ this.item.seller }}
+              {{ item.seller }}
             </p>
           </a>
         </div>
@@ -166,8 +166,7 @@ export default {
     > a {
       @apply text-gray-600 inline-block;
       &:hover {
-        @apply text-gray-700 underline;
-        text-decoration-color: theme(colors.primary.500);
+        @apply text-gray-700;
         
       }
     }

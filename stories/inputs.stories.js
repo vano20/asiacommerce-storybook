@@ -1,10 +1,14 @@
 import { storiesOf } from "@storybook/vue";
 
-import { InputText, InputGroup } from "../src/components/ui/Inputs";
+import {
+  InputText,
+  InputGroup,
+  InputNumber
+} from "../src/components/ui/Inputs";
 import { BaseButton } from "../src/components/ui/Buttons";
 import InputGroupStory from "../stories/InputGroupStory.vue";
 
-storiesOf("InputText", module)
+storiesOf("Inputs", module)
   .add("default", () => ({
     components: { InputText, BaseButton },
     template: `
@@ -18,4 +22,29 @@ storiesOf("InputText", module)
   }))
   .add("Input Group", () => ({
     render: h => h(InputGroupStory)
+  }))
+  .add("Input Number", () => ({
+    components: { InputNumber },
+    data() {
+      return {
+        initValue : 0,
+        stackedValue: 2
+      }
+    },
+    template: `
+    <div>
+      <p>paragraph</p>
+      <input-number
+        :min="0"
+        v-model="initValue"
+      />
+      <div class="block mt-4">
+        <label class="block"> Stacked input number </label>
+        <input-number
+          v-model="stackedValue"
+          is-stacked
+        />
+      </div>
+    </div>
+    `
   }));

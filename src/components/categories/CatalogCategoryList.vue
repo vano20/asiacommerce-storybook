@@ -1,18 +1,24 @@
 <template>
   <div>
-    <base-button
-      v-for="(category, idx) in categories"
-      :key="idx"
-      size="small"
-      class="m-1 category-button"
-    >
-      <dynamic-icon :icon="category.icon" />
-      {{ category.label }}
-    </base-button>
-    <base-button size="small" class="category-button">
-      <dynamic-icon icon="dots-horizontal" class="dots" />
-      View all categories
-    </base-button>
+    <div class="bg-white px-4 pt-4 pb-6 relative">
+      <base-button
+        v-for="(category, idx) in categories"
+        :key="idx"
+        class="m-1 category-button"
+      >
+        <dynamic-icon :icon="category.icon" />
+        {{ category.label }}
+      </base-button>
+      <base-button class="category-button">
+        <dynamic-icon icon="dots-horizontal" class="dots" />
+        View all categories
+      </base-button>
+      <div class="absolute inset-x-0 mx-auto text-center" style="bottom: -15px;">
+        <base-button is-pill is-link class="shadow-md">
+          Expand all categories
+        </base-button>
+      </div>
+    </div>
   </div>
 </template>
 

@@ -6,9 +6,14 @@ import "@/assets/styles/main.css";
 
 import LayoutBasic from "./views/layouts/LayoutBasic";
 import LayoutHasAuth from "./views/layouts/LayoutHasAuth";
+import Affix from 'vue-affix';
+// import StickySidebar from "sticky-sidebar";
 
 Vue.component("basic-layout", LayoutBasic);
 Vue.component("has-auth-layout", LayoutHasAuth);
+Vue.use(Affix);
+
+// Object.defineProperty(Vue.prototype, "$StickySidebar", { value: StickySidebar });
 
 Vue.config.productionTip = false;
 

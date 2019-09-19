@@ -1,5 +1,5 @@
-import PageCatalog from "@/views/PageCatalog/PageIndex";
-import PageMyProduct from "@/views/PageMyProduct/PageIndex"
+import PageCatalog from "../views/PageCatalog/PageIndex";
+import PageMyProduct from "../views/PageMyProduct/PageIndex"
 
 export default [
   {

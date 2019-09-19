@@ -11,6 +11,9 @@ import TheNavbar from '../src/components/navbar/TheNavbar.vue'
 import CatalogCategoryList from '../src/components/categories/CatalogCategoryList.vue'
 import SvgIcon from '../src/components/ui/SvgIcon.vue'
 import TheSwitch from '../src/components/ui/TheSwitch.vue'
+import BreadcrumbCategory from '../src/components/breadcrumbs/BreadcrumbCategory'
+import { DropdownMenu } from '../src/components/dropdowns/index'
+import DropdownStory from '../stories/DropdownStory.vue'
 
 storiesOf('WelcomeStorybook', module)
   .add('Typography', () => ({
@@ -52,9 +55,26 @@ storiesOf('Categories', module)
     render: h => h(CatalogCategoryList),
   }));
 
+  storiesOf('Breadcrumbs', module)
+  .add('Catalog category breadcrumb', () => ({
+    render: h => h(BreadcrumbCategory),
+  }));
+
 storiesOf('Svg Icon', module)
   .add('Svg Icon baru', () => ({
     render: h => h(SvgIcon),
+  }));
+
+storiesOf('Dropdowns', module)
+  .add('dropdown', () => ({
+    components: {DropdownMenu},
+
+    template: `
+      <dropdown-menu />
+    `
+  }))
+  .add('dropdown story', () => ({
+    render: h => h(DropdownStory),
   }));
 
 // automatically import all files ending in *.stories.js

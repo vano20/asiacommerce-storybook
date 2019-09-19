@@ -1,6 +1,6 @@
 <template>
   <div class="flex mb-4">
-    <div class="w-full bg-gray-200 h-auto p-2">
+    <div class="w-full border-b border-gray-200 h-auto p-2">
       <div class="w-full h-auto">
         Category
       </div>

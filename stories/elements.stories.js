@@ -11,12 +11,14 @@ storiesOf("Buttons", module)
         <div class="label">label Default</div>
         <div class="block font-size-lg pb-1">Base button</div>
         <base-button>Default</base-button>
+        <base-button is-pill>Is Pill</base-button>
         <base-button href="#">Anchor with href</base-button>
         <base-button variant="primary">Primary</base-button>
         <base-button variant="accent" href="#">accent</base-button>
         <base-button variant="success" href="#">Success</base-button>
         <base-button variant="info" href="#">info</base-button>
         <base-button variant="danger" href="#">danger</base-button>
+        <base-button is-link href="#">danger</base-button>
       </div>
       <div class="mt-4">
         <div class="block font-size-lg pb-1">Base 'solid' button</div>

@@ -3,7 +3,9 @@
     :class="[
       'btn ' + variantClass,
       sizeClass,
+      isPill ? 'rounded-full' : 'rounded',
       { 'w-full': isFullwidth },
+      { 'is-link': isLink },
       { 'is-solid': isSolid }
     ]"
     :is="wrapType"
@@ -27,6 +29,14 @@ export default {
       default: null
     },
     isSolid: {
+      type: Boolean,
+      default: false
+    },
+    isPill: {
+      type: Boolean,
+      default: false
+    },
+    isLink: {
       type: Boolean,
       default: false
     },
@@ -85,11 +95,11 @@ export default {
 } */
 
 .btn {
-  @apply border bg-white rounded inline-block border-gray-400;
+  @apply border bg-white inline-block border-gray-400 text-gray-700;
   transition: all .08s ease-in-out;
 
   &:hover {
-    @apply bg-gray-100 border-gray-500;
+    @apply bg-gray-100 border-gray-500 text-gray-800 no-underline;
     box-shadow: 0 3px 6px theme(colors.gray.500).1, 0 2px 3px theme(colors.gray.500).2;
   }
 
@@ -109,6 +119,15 @@ export default {
     &:active {
       opacity: 1;
     }
+  }
+}
+
+.is-link {
+  @apply border-none;
+  color: theme(colors.primary.500);
+
+  &:hover {
+    @apply shadow-none text-primary-600 underline;
   }
 }
 

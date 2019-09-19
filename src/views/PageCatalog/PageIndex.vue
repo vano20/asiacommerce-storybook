@@ -1,11 +1,36 @@
 <template>
-  <div class="ml-64 mt-12">
-    <!-- Categories -->
-    <category category-selected="hotproducts" />
+  <div class="">
+
+
+    <!-- Category list -->
+    <div class="-mx-4 mb-10 pt-10 shadow bg-white">
+
+      <!-- breadcrumb of categories here -->
+      <div class="category-breadcrumb block mx-4">
+        <breadcrumb-category />
+        <p class="inline-block pl-3">
+          <span class="text-gray-500">
+          "Keyword here"
+          </span>
+            &nbsp;-&nbsp;15 found
+        </p>
+      </div>
+
+      <!-- <category category-selected="hotproducts" /> -->
+      <category-list />
+    </div>
 
     <!-- Card Item -->
-    <div class="w-full bg-gray-200 h-auto">
-      {{ this.products }}
+    <div class="container mx-auto flex flex-wrap">
+      <!-- {{ this.products }} -->
+
+      <card-item
+        v-for="product in products"
+        :key="product.id"
+        :item="product"
+      >
+        <!-- {{ product.name }} -->
+      </card-item>
     </div>
   </div>
 </template>
@@ -17,15 +42,21 @@ import AuthServices from "../../services/auth";
 import CatalogServices from "../../services/catalog";
 
 import category from "./Category";
+import CatalogCategoryList from "../../components/categories/CatalogCategoryList";
+import BreadcrumbCategory from "../../components/breadcrumbs/BreadcrumbCategory";
 
 import { mapActions, mapState } from "vuex";
 
 import catalogs from "../../store/modules/catalogs";
+import CardItem from "../../components/cards/CardItem";
 
 export default {
   name: "PageCatalog",
   components: {
-    category
+    category,
+    "category-list": CatalogCategoryList,
+    CardItem,
+    BreadcrumbCategory
   },
   data() {
     return {
