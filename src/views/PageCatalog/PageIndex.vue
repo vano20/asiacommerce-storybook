@@ -5,16 +5,40 @@
     <!-- Category list -->
     <div class="-mx-4 mb-10 pt-10 shadow bg-white">
 
-      <!-- breadcrumb of categories here -->
-      <div class="category-breadcrumb block mx-4">
-        <breadcrumb-category />
-        <p class="inline-block pl-3">
-          <span class="text-gray-500">
-          "Keyword here"
+      <!-- category list header -->
+      <div class="category-list-header block mx-4 mb-4 flex items-center">
+
+        <!-- breadcrumb of categories here -->
+        <div class="category-breadcrumb flex-auto">
+          <breadcrumb-category />
+          <p class="inline-block pl-3">
+            <span class="text-gray-500">
+            "Keyword here"
+            </span>
+              &nbsp;-&nbsp;15 found
+          </p>
+        </div>
+
+        <div class="category-list-type flex-none">
+          <span class="font-medium text-gray-500">
+            Category types:&nbsp;
           </span>
-            &nbsp;-&nbsp;15 found
-        </p>
+          <button-group class="border rounded border-gray-400">
+            <input-radio name="category-type" buttonize value="Hot-Product" v-model="categoryTypeValue" custom-class="is-medium">
+              Hot Products
+            </input-radio>
+            <input-radio name="category-type" buttonize value="Wholesale" v-model="categoryTypeValue" custom-class="is-medium" checked>
+              Wholesale
+            </input-radio>
+            <input-radio name="category-type" buttonize value="Retail" v-model="categoryTypeValue" custom-class="is-medium">
+              Retail
+            </input-radio>
+          </button-group>
+        </div>
+
+
       </div>
+
 
       <!-- <category category-selected="hotproducts" /> -->
       <category-list />
@@ -45,6 +69,9 @@ import category from "./Category";
 import CatalogCategoryList from "../../components/categories/CatalogCategoryList";
 import BreadcrumbCategory from "../../components/breadcrumbs/BreadcrumbCategory";
 
+import { ButtonGroup } from "../../components/ui/Buttons";
+import { InputRadio } from "../../components/ui/Inputs";
+
 import { mapActions, mapState } from "vuex";
 
 import catalogs from "../../store/modules/catalogs";
@@ -56,11 +83,13 @@ export default {
     category,
     "category-list": CatalogCategoryList,
     CardItem,
-    BreadcrumbCategory
+    BreadcrumbCategory,
+    ButtonGroup, InputRadio
   },
   data() {
     return {
-      data: null
+      data: null,
+      categoryTypeValue: "wholesale",
     };
   },
 

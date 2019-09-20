@@ -95,16 +95,28 @@ export default {
 } */
 
 .btn {
-  @apply border bg-white inline-block border-gray-400 text-gray-700;
+  @apply border bg-white inline-block border-gray-400 text-gray-700 cursor-pointer
+  ;
   transition: all .08s ease-in-out;
 
-  &:hover {
+  &:hover,
+  &.is-hover {
     @apply bg-gray-100 border-gray-500 text-gray-800 no-underline;
     box-shadow: 0 3px 6px theme(colors.gray.500).1, 0 2px 3px theme(colors.gray.500).2;
   }
 
-  &:active {
+  &:active,
+  &.is-active {
+    @apply relative;
     box-shadow: 0 0 1px 0 theme(colors.gray.600).1, 0 0 1px 2px theme(colors.gray.500).1;
+  }
+
+  &.is-focus {
+    @apply bg-primary-100 text-primary-500 border-gray-500 relative;
+    &:hover {
+      box-shadow: 0 0 1px 0 theme(colors.gray.600).1, 0 0 5px 2px theme(colors.gray.500).1;
+    }
+    outline: none;
   }
 
   &.is-solid {
@@ -131,7 +143,7 @@ export default {
   }
 }
 
-button {
+.btn {
   &:focus {
     outline: none;
   }
@@ -174,8 +186,7 @@ button {
 
 @each $size, $alias in (small, medium, large, huge), (sm, base, lg, xl) {
   @if $size == small {
-    button.is-$(size),
-    a.is-$(size) {
+    .btn.is-$(size) {
       /* @apply px-2; */
       padding-left: .3rem;
       padding-right: .3rem;
@@ -184,8 +195,7 @@ button {
       font-size: theme(fontSize.$(alias));
     }
   } @else {
-    button.is-$(size),
-    a.is-$(size) {
+    .btn.is-$(size) {
       @apply px-3 py-1;
       font-size: theme(fontSize.$(alias));
     }

@@ -14,16 +14,27 @@ export default {
 .button-group {
   display: inline-flex;
   & > .btn,
-  & > .btn-solid {
+  & > .btn-solid,
+  & > .buttonize {
     @apply block rounded-none;
     margin-left: -1px;
 
-    &:first-child {
+    &:hover {
+    }
+
+    & > .btn {
+      @apply border-none;
+      border-width: 1px 0;
+    }
+
+    &:first-of-type,
+    &:first-of-type .btn {
       @apply rounded-l;
       margin-left: 0px;
     }
 
-    &:last-child {
+    &:last-of-type,
+    &:last-of-type .btn {
       @apply rounded-r;
     }
   }

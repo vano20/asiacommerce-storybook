@@ -14,6 +14,9 @@ import TheSwitch from '../src/components/ui/TheSwitch.vue'
 import BreadcrumbCategory from '../src/components/breadcrumbs/BreadcrumbCategory'
 import { DropdownMenu } from '../src/components/dropdowns/index'
 import DropdownStory from '../stories/DropdownStory.vue'
+import { InputCheckbox, InputRadio,  } from '../src/components/ui/Inputs'
+import { ButtonGroup, BaseButton } from '../src/components/ui/Buttons'
+import { RadioToggle } from '../src/components/toggles'
 
 storiesOf('WelcomeStorybook', module)
   .add('Typography', () => ({
@@ -30,6 +33,60 @@ storiesOf('WelcomeStorybook', module)
   }))
   .add('Navbar', () => ({
     render: h => h(TheNavbar),
+  }))
+  .add('Radio Button', () => ({
+    components: {
+      "radio" : InputRadio, "checkbox": InputCheckbox,
+      BaseButton, ButtonGroup,
+      RadioToggle
+    },
+    data () {
+      return {
+        radioValue: "",
+        checkboxValue: []
+      }
+    },
+    template: `
+      <div class="p-4">
+        <fieldset class="p-4">
+          <legend>Radio button sample </legend>
+          <radio name="robot" value="yes" v-model="radioValue" checked>
+          I'm a robot 🤖
+          </radio>
+          <radio name="robot" value="no" v-model="radioValue">
+          I'm not a robot
+          </radio>
+          <button-group class="border rounded border-gray-400">
+            <radio name="robot" buttonize value="satu" v-model="radioValue" custom-class="is-medium">
+              satu
+            </radio>
+            <radio name="robot" buttonize value="dua" v-model="radioValue" custom-class="is-medium">
+              dua
+            </radio>
+            <radio name="robot" buttonize value="tiga" v-model="radioValue" custom-class="is-medium">
+              tiga
+            </radio>
+            <radio name="robot" buttonize value="empat" v-model="radioValue" custom-class="is-medium">
+              empat
+            </radio>
+          </button-group>
+          <p>test {{ radioValue }}</p>
+        </fieldset>
+        <fieldset class="p-4">
+          <legend>Checkbox button sample</legend>
+          <button-group>
+            <checkbox name="food[]" value="pizza" v-model="checkboxValue" checked>
+                🍕 Pizza
+            </checkbox>
+            <checkbox name="food[]" value="hamburger" v-model="checkboxValue">
+                🍔 Hamburger
+            </checkbox>
+          </button-group>
+          <p>test {{ checkboxValue }}</p>
+        </fieldset>
+        <radio-toggle></radio-toggle>
+      </div>
+    `
   }))
   .add('Switch', () => ({
     components: {TheSwitch},
