@@ -20,6 +20,7 @@ export default {
     margin-left: -1px;
 
     &:hover {
+      @apply relative;
     }
 
     & > .btn {

@@ -49,7 +49,7 @@
     }
 
     .is-focus {
-      @apply font-medium;
+      @apply font-medium z-10;
     }
   }
 }

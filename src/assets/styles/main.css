@@ -5,8 +5,76 @@
 @import "tailwindcss/utilities";
 
 @import "./bagdes-n-labels.css";
-
 @import url('https://fonts.googleapis.com/css?family=Fira+Sans:300,300i,400,400i,500,500i,600,600i,700,700i&display=swap');
+
+@import 'vue-select/dist/vue-select.css';
+
+/* vue-select re-style */
+
+.vs__dropdown-toggle {
+  @apply border-gray-300;
+
+  .vs--open & {
+    @apply border-gray-400;
+  }
+}
+
+.vs__dropdown-menu {
+  @apply border-gray-400;
+}
+
+.vs__selected {
+  @apply border-primary-200 bg-primary-100 text-primary-400 rounded-sm;
+
+  > .vs__deselect {
+    padding: 4px 4px 4px 2px;
+    margin-right: -4px;
+    @apply text-primary-300;
+    
+    > svg {
+    }
+  }
+  
+}
+
+
+
+.vs__dropdown-option {
+
+  @apply text-gray-700;
+
+  &--highlight {
+    @apply bg-primary-100 text-primary-500;
+  }
+}
+
+.vs__open-indicator {
+
+  .vs--open & {
+    transform: scale(0.75) rotate(180deg);
+  }
+}
+
+.vs__actions {
+  @apply text-gray-500;
+}
+
+svg {
+  
+  .vs__deselect & {
+    transform: scale(0.8);
+    width: 10px;
+    height: 10px;
+    fill: currentColor;
+  }
+  .vs__actions & {
+    transform: scale(0.75);
+    width: 14px;
+    height: 10px;
+    fill: currentColor;
+  }
+}
+
 
 /* heading styles */
 @each $heading, $size in (h1, h2, h3, h4, h5, h6), (5xl, 4xl, 3xl, 2xl, xl, lg ) {
