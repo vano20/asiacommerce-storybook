@@ -7,11 +7,9 @@
         alt="Asiacomerce (ALI) logo"
       />
     </figure>
-    <!-- <base-button class="navbar-btn"> -->
-      <button class="btn is-link is-primary">
-        <icon-menu />
-      </button>
-    <!-- </base-button> -->
+    <base-button class="navbar-btn" @click="toggleSidebar">
+      <icon-menu />
+    </base-button>
   </div>
 </template>
 
@@ -19,13 +17,20 @@
 import { BaseButton } from "../ui/Buttons";
 import IconMenu from "../../../src/assets/icons/menu.svg";
 
+import { mapActions } from "vuex";
+
 export default {
   name: "NavbarBrand",
   components: {
     BaseButton,
     IconMenu
+  },
+  methods: {
+    ...mapActions({
+      toggleSidebar: "toggleSidebar"
+    })
   }
-}
+};
 </script>
 
 <style>
