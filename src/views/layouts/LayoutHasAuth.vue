@@ -1,5 +1,5 @@
 <template>
-  <div class="layout has-auth-layout">
+  <div class="layout has-auth-layout" :class="getSideBarState">
     <headroom>
       <the-navbar />
     </headroom>
@@ -30,6 +30,8 @@ import TheNavbar from "../../components/navbar/TheNavbar";
 import { TheSidebar } from "../../components/sidebar";
 import { headroom } from "vue-headroom";
 
+import { mapGetters } from "vuex";
+
 // import StickySidebar from "sticky-sidebar";
 
 export default {
@@ -38,6 +40,19 @@ export default {
     headroom,
     TheNavbar,
     TheSidebar
+  },
+  watch: {
+    sideBar() {
+      console.log("sidebar state change", this.sideBar);
+    }
+  },
+  computed: {
+    ...mapGetters({
+      sideBar: "getSideBar"
+    }),
+    getSideBarState() {
+      return this.sideBar ? "sidebar-open" : "sidebar";
+    }
   }
   // beforeCreate () {
   //   var sidebar = new this.$StickySidebar('#the-sidebar', {
