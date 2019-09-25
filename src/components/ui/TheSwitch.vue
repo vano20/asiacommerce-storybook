@@ -7,9 +7,7 @@
       :disabled="disabled"
       @change="trigger"
     />
-    <span
-      v-if="title"
-    >
+    <span v-if="title">
       {{ this.title }}
     </span>
   </label>
@@ -34,17 +32,17 @@ export default {
       default: true
     }
   },
-  mounted () {
-    if(this.emitOnMount) {
-      this.$emit('input', this.value)
+  mounted() {
+    if (this.emitOnMount) {
+      this.$emit("input", this.value);
     }
   },
   methods: {
-    trigger (e) {
-      this.$emit('input', e.target.checked)
+    trigger(e) {
+      this.$emit("input", e.target.checked);
     }
-  },
-}
+  }
+};
 </script>
 
 <style lang="css" scoped>
@@ -69,7 +67,6 @@ label{
     width: 12px;
     transition: all .14s ease-in-out;
   }
-  
   > input {
     display: none;
   }
@@ -78,8 +75,6 @@ label{
     @apply select-none inline-block h-full ;
     padding: 0 6px 0 36px;
     line-height: 1.75;
-
-    
   }
 
   &.enabled {
@@ -90,7 +85,7 @@ label{
 
     &:after {
       @apply bg-primary-100 border-primary-500;
-      transform: translateX(12px); 
+      transform: translateX(12px);
     }
   }
 }

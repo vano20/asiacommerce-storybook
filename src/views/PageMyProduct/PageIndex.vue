@@ -47,33 +47,50 @@
     <div class="bg-white p-4">
       <div class="flex">
         <div class="flex-none pr-4">
-          <figure>
-            <img src="https://picsum.photos/seed/picsum/180/200" alt="">
-          </figure>
+          <div class="relative">
+            <figure>
+              <img src="https://picsum.photos/seed/picsum/180/200" alt="">
+            </figure>
+          </div>
         </div>
         <div class="flex-auto">
+          <div class="block">
+            <span class="badge">badge is here</span>
+            <span class="badge is-primary">badge is here</span>
+            <span class="badge is-accent">badge is here</span>
+            <span class="badge is-warning">badge is here</span>
+            <span class="badge is-info">badge is here</span>
+            <span class="badge is-success">badge is here</span>
+            <span class="badge is-pink">label is here</span>
+          </div>
+          <div class="block">
+            <badge title="title" variant="primary" />
+            <badge>
+              <em>miring</em> Sithik
+            </badge>
+          </div>
           <div class="text-sm">
             Recommendation > Recommendation for Reymond > Sneakers
           </div>
           <h4 class="text-lg">
             0 to 2 years old 1 girl autumn child boy shoes 7 flashing lights 6 single shoes 5 sports shoes 4 children 3 baby white shoes
           </h4>
-          <div class="bg-accent-100 border border-accent-200 flex items px-2 py-1 rounded">
+          <div class="bg-gray-100 border border-gray-200 flex items px-2 py-1 rounded">
             <div class="flex-none text-lg text-gray-500 mr-2">
               Costs
             </div>
             <div class="flex-auto">
               <div class="inline-flex">
-                <p class="text-lg mx-3 text-accent-600">
-                  <span class="inline-block text-base text-accent-500">Product:&nbsp;</span>
+                <p class="text-lg mx-3 text-gray-600">
+                  <span class="inline-block text-base text-gray-500">Product:&nbsp;</span>
                   <span class="inline-block font-medium">IDR 99,180.00</span>
                 </p>
-                <p class="text-lg mx-3 text-accent-600">
-                  <span class="inline-block text-base text-accent-500">Logistic:&nbsp;</span>
+                <p class="text-lg mx-3 text-gray-600">
+                  <span class="inline-block text-base text-gray-500">Logistic:&nbsp;</span>
                   <span class="inline-block font-medium">IDR 120,000.00</span>
                 </p>
-                <p class="text-lg mx-3 text-accent-600">
-                  <span class="inline-block text-base text-accent-500">Landed:&nbsp;</span>
+                <p class="text-lg mx-3 text-gray-600">
+                  <span class="inline-block text-base text-gray-500">Landed:&nbsp;</span>
                   <span class="inline-block font-medium">IDR 219,180.00</span>
                 </p>
               </div>
@@ -92,6 +109,7 @@
 
 <script>
 import { BaseButton, ButtonGroup } from "../../components/ui/Buttons";
+import TheBadge from "../../components/ui/TheBadge";
 import DynamicIcon from "../../components/ui/DynamicIcon";
 
 export default {
@@ -99,6 +117,7 @@ export default {
   components: {
     BaseButton,
     ButtonGroup,
+    "badge": TheBadge,
     DynamicIcon
   },
   data () {

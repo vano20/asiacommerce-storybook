@@ -1,21 +1,13 @@
 <template>
-  <div
-    class="inline-flex relative align-top"
-    :class="dropdownClasses"
-  >
+  <div class="inline-flex relative align-top" :class="dropdownClasses">
     <div class="dropdown-trigger" :class="{ 'is-split': isSplit }">
       <template v-if="isSplit">
         <button-group>
           <base-button
-            :class="[
-              triggerClasses,
-              { 'is-link': triggerIsLink }
-            ]"
+            :class="[triggerClasses, { 'is-link': triggerIsLink }]"
             @click="toggleDropdown()"
           >
-            <template
-              v-if="hasCustomLabel === true"
-            >
+            <template v-if="hasCustomLabel === true">
               <slot name="custom-label" />
             </template>
             <template v-else>
@@ -24,27 +16,19 @@
           </base-button>
           <base-button
             class="button-caret"
-            :class="[
-              triggerClasses,
-              { 'is-link': triggerIsLink },
-            ]"
+            :class="[triggerClasses, { 'is-link': triggerIsLink }]"
             @click="toggleDropdown()"
           >
-            <dynamic-icon icon="caret-down"/>
+            <dynamic-icon icon="caret-down" />
           </base-button>
         </button-group>
       </template>
       <template v-else>
         <base-button
-          :class="[
-            triggerClasses,
-            { 'is-link': triggerIsLink },
-          ]"
+          :class="[triggerClasses, { 'is-link': triggerIsLink }]"
           @click="toggleDropdown()"
         >
-          <template
-            v-if="hasCustomLabel === true"
-          >
+          <template v-if="hasCustomLabel === true">
             <slot name="custom-label" />
           </template>
           <template v-else>
@@ -68,8 +52,6 @@
       </div>
     </transition>
   </div>
-
-
 </template>
 
 <script>
@@ -79,7 +61,8 @@ import DynamicIcon from "../ui/DynamicIcon";
 export default {
   name: "DropdownMenu",
   components: {
-    ButtonGroup, BaseButton,
+    ButtonGroup,
+    BaseButton,
     DynamicIcon
   },
   props: {
@@ -93,24 +76,24 @@ export default {
     },
     triggerClass: {
       type: String,
-      default: "null",
+      default: "null"
     },
     href: String
   },
   created: function() {
     let self = this;
 
-    window.addEventListener('click', function(e){
+    window.addEventListener("click", function(e) {
       // close dropdown when clicked outside
-      if (!self.$el.contains(e.target)){
-        self.isActive = false
-      } 
-    })
+      if (!self.$el.contains(e.target)) {
+        self.isActive = false;
+      }
+    });
   },
   data() {
     return {
       isActive: false
-    }
+    };
   },
   computed: {
     dropdownClasses: function() {
@@ -119,94 +102,89 @@ export default {
       } else {
         return "dropdown";
       }
-      console.log("dropdownClasses = " + this.dropdownClasses);
     },
     triggerClasses() {
       return this.triggerClass.toLowerCase();
-    },
+    }
   },
   methods: {
-    toggleDropdown () {
+    toggleDropdown() {
       if (this.disabled) {
-        return 
+        return;
       }
       this.isActive = !this.isActive;
-    },
+    }
   }
-}
+};
 </script>
 
 <style lang="css" scoped>
 
-  .dropdown {
+.dropdown {
 
-    
-    &-menu {
-      min-width: 12rem;
-      top: 100%;
-      padding-top: 4px;
-    }
-
-    &-content {
-    }
-
-    &.is-active {
-
-      .dropdown-menu {
-        /* display: block; */
-      }
-    }
-
-    &-item {
-      
-    }
-
-    &-divider {
-      @apply border-none my-2 block bg-gray-200;
-      height: 1px;
-    }
-
-    .is-split {
-
-      .button-group {
-
-        button:first-of-type {
-          @apply pr-1;
-        }
-
-        .button-caret {
-          @apply px-2;
-
-          > svg {
-            width: .5rem;
-          }
-        }
-
-      }
-
-    }
-
-    /* dropdown transition animation */
-    &-enter,
-    &-leave-to {
-      opacity: 0;
-      top: 96%;
-    }
-
-    &-leave,
-    &-enter-to {
-      opacity: 1;
-      top: 100%;
-    }
-
-    &-enter-active,
-    &-leave-active {
-      position: absolute;
-      width: 100%;
-      transition: all 160ms ease-in-out;
-    }
-
-    &-enter-active { transition-delay: 60ms }
+  &-menu {
+    min-width: 12rem;
+    top: 100%;
+    padding-top: 4px;
   }
 
+  &-content {
+  }
+
+  &.is-active {
+
+    .dropdown-menu {
+      /* display: block; */
+    }
+  }
+
+  &-item {}
+
+  &-divider {
+    @apply border-none my-2 block bg-gray-200;
+    height: 1px;
+  }
+
+  .is-split {
+
+    .button-group {
+
+      button:first-of-type {
+        @apply pr-1;
+      }
+
+      .button-caret {
+        @apply px-2;
+
+        > svg {
+          width: .5rem;
+        }
+      }
+
+    }
+
+  }
+
+  /* dropdown transition animation */
+  &-enter,
+  &-leave-to {
+    opacity: 0;
+    top: 96%;
+  }
+
+  &-leave,
+  &-enter-to {
+    opacity: 1;
+    top: 100%;
+  }
+
+  &-enter-active,
+  &-leave-active {
+    position: absolute;
+    width: 100%;
+    transition: all 160ms ease-in-out;
+  }
+
+  &-enter-active { transition-delay: 60ms }
+}
 </style>

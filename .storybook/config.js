@@ -17,6 +17,7 @@ import DropdownStory from '../stories/DropdownStory.vue'
 import { InputCheckbox, InputRadio,  } from '../src/components/ui/Inputs'
 import { ButtonGroup, BaseButton } from '../src/components/ui/Buttons'
 import { RadioToggle } from '../src/components/toggles'
+import TheBadge from '../src/components/ui/TheBadge'
 
 storiesOf('WelcomeStorybook', module)
   .add('Typography', () => ({
@@ -120,6 +121,28 @@ storiesOf('Categories', module)
 storiesOf('Svg Icon', module)
   .add('Svg Icon baru', () => ({
     render: h => h(SvgIcon),
+  }));
+
+storiesOf('Badges', module)
+  .add('Basic', () => ({
+    components: {"badge": TheBadge},
+    template: `
+      <div class="p-4">
+        <badge title="Badge title here" />
+        <badge>
+          HTML content <em>here</em>. <span class="text-danger-500">Don't forget</span> to remove "title" attribute
+        </badge>
+        <badge title="Badge title + primary variant" variant="primary"/>
+        <badge title="Badge title + accent variant" variant="accent"/>
+        <badge title="Badge title + info variant" variant="info"/>
+        <badge title="Badge title + success variant" variant="success"/>
+        <badge title="Badge title + warning variant" variant="warning"/>
+        <badge title="Badge title + pink variant" variant="pinkl"/>
+        <badge title="Badge title + danger variant" variant="danger"/>
+        <br />
+        <badge title="Is Pill" variant="primary" is-pill />
+      </div>
+    `
   }));
 
 storiesOf('Dropdowns', module)

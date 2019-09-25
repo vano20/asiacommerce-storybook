@@ -7,9 +7,11 @@
         alt="Asiacomerce (ALI) logo"
       />
     </figure>
-    <base-button class="navbar-btn">
-      <icon-menu />
-    </base-button>
+    <!-- <base-button class="navbar-btn"> -->
+      <button class="btn is-link is-primary">
+        <icon-menu />
+      </button>
+    <!-- </base-button> -->
   </div>
 </template>
 
