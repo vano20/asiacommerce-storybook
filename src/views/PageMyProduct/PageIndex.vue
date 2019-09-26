@@ -11,11 +11,11 @@
           <div class="inline-flex px-3 py-4 text-gray-600">
             Product
           </div>
-          <div class="inline-flex px-3 py-4 text-gray-700 border-b-2 border-primary-400">
+          <div class="inline-flex px-3 py-4 text-gray-700 border-t-2 border-gray-200 border-l border-r" style="border-top-color: #FFA361;">
             Description
           </div>
           <div class="inline-flex px-3 py-4 text-gray-600">
-            Variants
+            Variants [12]
           </div>
           <div class="inline-flex px-3 py-4 text-gray-600">
             Images
@@ -54,28 +54,40 @@
           </div>
         </div>
         <div class="flex-auto">
-          <div class="block">
-            <span class="badge">badge is here</span>
-            <span class="badge is-primary">badge is here</span>
-            <span class="badge is-accent">badge is here</span>
-            <span class="badge is-warning">badge is here</span>
-            <span class="badge is-info">badge is here</span>
-            <span class="badge is-success">badge is here</span>
-            <span class="badge is-pink">label is here</span>
+          <div class="flex items-center">
+            <div class="flex-auto">
+              <div class="text-sm text-gray-600">
+                Recommendation > Recommendation for Reymond > Sneakers
+              </div>
+            </div>
+            <div class="flex-none">
+              <div class="block">
+                <div class="badge-group">
+                  <badge title="Not pushed" is-solid size="sm"/>
+                  <badge variant="accent" size="sm">
+                    <dynamic-icon icon="check-box" />
+                    7 variants selected
+                  </badge>
+                </div>
+              </div>
+            </div>
           </div>
-          <div class="block">
-            <badge title="title" variant="primary" />
-            <badge>
-              <em>miring</em> Sithik
-            </badge>
+          <div class="py-2">
+            <h4 class="text-lg">
+              0 to 2 years old 1 girl autumn child boy shoes 7 flashing lights 6 single shoes 5 sports shoes 4 children 3 baby white shoes
+              <span>
+                <button-group>
+                  <base-button is-links size="small">
+                    edit
+                  </base-button>
+                  <base-button is-links size="small">
+                    view
+                  </base-button>
+                </button-group>
+              </span>
+            </h4>
           </div>
-          <div class="text-sm">
-            Recommendation > Recommendation for Reymond > Sneakers
-          </div>
-          <h4 class="text-lg">
-            0 to 2 years old 1 girl autumn child boy shoes 7 flashing lights 6 single shoes 5 sports shoes 4 children 3 baby white shoes
-          </h4>
-          <div class="bg-gray-100 border border-gray-200 flex items px-2 py-1 rounded">
+          <div class="bg-gray-100 border border-gray-200 flex items px-2 py-1 rounded my-1">
             <div class="flex-none text-lg text-gray-500 mr-2">
               Costs
             </div>
@@ -96,10 +108,60 @@
               </div>
             </div>
           </div>
-          <div class="my-1">
-            <vue-select :options="options" multiple />
+          <div class="py-2 flex items-center">
+            <div class="flex-none pr-2">
+              <p>
+                Categories:
+                <badge is-pill>
+                  <dynamic-icon icon="info" />
+                </badge>
+              </p>
+            </div>
+            <div class="flex-auto">
+              <vue-select :options="options" multiple />
+            </div>
           </div>
         </div>
+      </div>
+    </div>
+
+    <!-- tab setting content -->
+    <div class="bg-white p-4 border-t border-gray-200">
+      <div class="mx-auto" style="width: 400px;">
+        
+        <div class="flex">
+          <p class="flex-auto">
+            Price calculation type
+          </p>
+          <div class="flex-none">
+            <div class="inline-flex px-2 py-1 border-b border-primary-400">
+              Multiplier
+            </div>
+            <div class="inline-flex px-2 py-1 ">
+              Fixed
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-gray-100">
+          <input-group>
+            <template slot="prepend">
+              <div class="select">
+                <select name="" id="" class="p-1 border">
+                  <option value="">IDR</option>
+                  <option value="">USD</option>
+                </select>
+              </div>
+            </template>
+            <input-text value="200%" />
+          </input-group>
+        </div>
+
+      <div class="py-2">
+        <base-button>
+          Update pricing calculation
+        </base-button>
+      </div>
       </div>
     </div>
 
@@ -109,6 +171,7 @@
 
 <script>
 import { BaseButton, ButtonGroup } from "../../components/ui/Buttons";
+import { InputGroup, InputText } from "../../components/ui/Inputs";
 import TheBadge from "../../components/ui/TheBadge";
 import DynamicIcon from "../../components/ui/DynamicIcon";
 
@@ -118,6 +181,8 @@ export default {
     BaseButton,
     ButtonGroup,
     "badge": TheBadge,
+    InputGroup,
+    InputText,
     DynamicIcon
   },
   data () {

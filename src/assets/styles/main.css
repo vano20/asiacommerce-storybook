@@ -206,3 +206,18 @@ svg {
   color: inherit;
   vertical-align: middle;
 }
+
+/* badge-group style */
+.badge-group {
+
+  > .badge {
+    @apply m-0 rounded-none;
+
+    &:first-of-type {
+      @apply rounded-l;
+    }
+    &:last-of-type {
+      @apply rounded-r;
+    }
+  }
+}

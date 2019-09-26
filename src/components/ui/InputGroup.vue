@@ -27,16 +27,25 @@ export default {
 
 <style lang="css">
 .input-group {
-  @apply flex relative items-stretch w-full;
+  @apply flex relative items-center w-full;
 
   & > &-prepend {
-    @apply flex items-center;
+    @apply flex-none items-center;
     margin-right: -1px;
     z-index: 1;
 
     & > .btn,
     & > .btn-solid {
       @apply rounded-r-none;
+    }
+
+    & > .select > select {
+      @apply rounded-l outline-none;
+      padding-top: .3rem;
+
+      &:focus {
+        z-index: 1;
+      }
     }
   }
 
@@ -52,6 +61,10 @@ export default {
       @apply rounded-r;
     }
 
+    &:focus {
+      z-index: 1;
+    }
+
   }
   &:hover,
   &:active {
@@ -65,7 +78,7 @@ export default {
   }
 
   & > &-append {
-    @apply flex items-center;
+    @apply flex-none items-center;
     margin-left: -1px;
     z-index: 1;
 
@@ -77,7 +90,8 @@ export default {
 
   .icon-inside {
     svg {
-      @apply text-gray-400 absolute flex self-center ml-2 z-10;
+      @apply text-gray-400 absolute self-center ml-2 z-10;
+      transform: translateY(-50%);
     }
 
     + input {

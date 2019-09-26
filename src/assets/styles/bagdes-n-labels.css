@@ -1,15 +1,3 @@
 .badge {
-  @apply bg-gray-200 inline-block px-2 text-gray-700 text-sm font-medium;
-  margin-left: .1rem;
-  margin-right: .1rem;
-  padding-top: .06rem;
-  padding-bottom: .06rem;
-
-}
-
-@each $variant in primary, accent, warning, info, success, danger, pink {
-  .badge.is-$(variant) {
-    color: theme(colors.$(variant).700);
-    background-color: theme(colors.$(variant).200);
-  }
+  content: '';
 }
