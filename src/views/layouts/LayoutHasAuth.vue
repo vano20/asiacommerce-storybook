@@ -4,16 +4,18 @@
       <the-navbar />
     </headroom>
     <div class="flex">
-      <div class="flex-none bg-white z-10" style="width: 220px;">
-        <affix
-          class="sidebar-menu"
-          scroll-affix
-          relative-element-selector="#main-container"
-          :offset="{ top:0, bottom: 20 }"
-        >
-          <the-sidebar />
-        </affix>
-      </div>
+      <transition name="slide-left">
+        <div class="flex-none bg-white z-10 sidebar-wrapper" v-if="sideBar">
+          <affix
+            class="sidebar-menu"
+            scroll-affix
+            relative-element-selector="#main-container"
+            :offset="{ top:0, bottom: 0 }"
+          >
+            <the-sidebar />
+          </affix>
+        </div>
+      </transition>
       <div class="flex-auto">
         <div class="main-container container mx-auto px-4" id="main-container">
           <main>
@@ -67,6 +69,20 @@ export default {
 </script>
 
 <style>
+.slide-left-enter-active, .slide-left-leave-active {
+  transition: all .08s ease-in-out;
+  /* background: #000; */
+}
+.slide-left-enter, .slide-left-leave-to /* .fade-leave-active below version 2.1.8 */ {
+  /* opacity: 0; */
+  transform: translateX(-100%);
+}
+
+.slide-left-leave-to {
+  /* background: red; */
+}
+
+
 html,
 body {
   background-color: theme(colors.gray.100);
@@ -88,15 +104,28 @@ body {
 
 .sidebar-menu {
 
-  &.affix-top {
-    /* margin-top: -48px; */
+  >>> .sidebar-main {
+    /* background: orange; */
+    min-height: calc(100vh - 94px);
   }
-  /* margin-top: -48px;
 
 
   &.affix {
-    margin-top: 0;
-  } */
+    
+    >>> .sidebar-main {
+      /* min-height: calc(100vh - 48px); */
+      /* background: red; */
+    }
+  }
+  
+  &.affix-top {
+    /* margin-top: -48px; */
+
+    >>> .sidebar-main {
+      /* min-height: calc(100vh - 92px); */
+    }
+  }
+
 }
 
 .layout {
@@ -104,7 +133,8 @@ body {
   --sidebar-width: 220px;
   @apply bg-gray-100;
 
-  .sidebar {
+  .sidebar,
+  .sidebar-wrapper {
     /* position: fixed; */
     width: var(--sidebar-width);
   }
@@ -112,5 +142,9 @@ body {
   main {
     /* margin-left: var(--sidebar-width); */
   }
+}
+
+.headroom--not-top.headroom--pinned ~ .sidebar-wrapper {
+  background: blue;
 }
 </style>

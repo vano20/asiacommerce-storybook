@@ -251,6 +251,11 @@ export default {
     
   }
 
+  .btn > svg {
+    width: .75rem;
+    height: .75rem;
+  }
+
   .prepend {
     margin-right: -5px;
 

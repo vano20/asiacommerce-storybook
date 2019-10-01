@@ -1,7 +1,7 @@
 <template>
         <!-- v-if="idx === 2" -->
   <div class="sidebar bg-white z-20">
-    <div class="inner">
+    <div class="sidebar-main">
       <!-- <navbar-brand /> -->
       <div class="bg-gray-100 p-4 flex items-center">
         <div class="flex-none">
@@ -35,7 +35,8 @@
       <div 
         class="h-6 border-b border-gray-200"
       />
-      
+    </div>
+    <div class="sidebar-footer">
       <div class="relative">
 
         <sidebar-menu-item
@@ -53,7 +54,6 @@
           />
         </div>
       </div>
-
     </div>
   </div>
 </template>

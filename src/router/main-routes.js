@@ -1,5 +1,6 @@
 import PageCatalog from "../views/PageCatalog/PageIndex";
 import PageMyProduct from "../views/PageMyProduct/PageIndex"
+import PageMyOrder from "../views/PageMyOrder/PageIndex"
 
 export default [
   {
@@ -25,7 +26,7 @@ export default [
     icon: "my-order",
     name: "PageMyOrder",
     meta: { layout: "has-auth" },
-    // component: () => import("@/views/PageMyOrder/PageIndex.vue")
+    component: PageMyOrder
   },
   {
     path: "/platforms",
