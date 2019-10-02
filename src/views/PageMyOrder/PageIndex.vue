@@ -1,6 +1,6 @@
 <template>
   <div class="p-10">
-    <div class="bg-white shadow rounded">
+    <div class="">
       <!-- <div class="border-b border-gray-200 font-semibold text-gray-700">
         <div class="px-4 py-3">
           Date & Client Name
@@ -21,20 +21,25 @@
 
 
       <order-item>
-        Kemenyek
+      </order-item>
+      <order-item>
       </order-item>
 
+      <order-detail-view></order-detail-view>
+    
     </div>
   </div>
 </template>
 
 <script>
 import OrderItem from "../../components/order/OrderItem";
+import OrderDetailView from "../../components/order/OrderDetailView";
 
 export default {
   name: "PageMyOrder",
   components: {
-    OrderItem
+    OrderItem,
+    "order-detail-view": OrderDetailView
   }
 }
 </script>
