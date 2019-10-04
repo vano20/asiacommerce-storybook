@@ -39,7 +39,8 @@
     </div>
     <transition name="dropdown">
       <div
-        class="dropdown-menu left-0 absolute z-20 "
+        class="dropdown-menu absolute z-20 "
+        :class="[rightDropdown ? 'right-0' : 'left-0']"
         id="dropdown-menu2"
         role="menu"
         v-if="isActive"
@@ -67,6 +68,7 @@ export default {
   },
   props: {
     label: String,
+    rightDropdown: Boolean, 
     disabled: Boolean,
     isSplit: Boolean,
     triggerIsLink: Boolean,

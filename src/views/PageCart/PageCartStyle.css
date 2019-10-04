@@ -1,0 +1,16 @@
+.page-cart {
+
+  >>> [class*="cart-col-"] {
+    @apply px-4;
+  }
+
+  >>> .cart-col-qty {
+    @apply text-center;
+    width: 76px;
+  }
+  
+  >>> .cart-col-action {
+    @apply text-right;
+    width: 80px;
+  }
+}
