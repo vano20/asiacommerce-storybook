@@ -1,6 +1,6 @@
 <template>
-  <div class="shadow rounded hover:shadow-md bg-white">
-    <div class="flex px-4 items-start py-3 rounded">
+  <div class="shadow rounded hover:shadow-md bg-white my-2">
+    <div class="cart-item-content flex px-4 items-start py-3 rounded">
       <div class="flex-none">
         <input type="checkbox">
       </div>
@@ -18,6 +18,9 @@
           <dynamic-icon icon="trash" />
         </button>
       </div>
+    </div>
+    <div class="cart-variants">
+      <slot />
     </div>
     <div class="cart-item-footer flex items-center px-4 py-3 bg-gray-100 rounded-b">
       <div class="flex-auto">

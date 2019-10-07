@@ -23,15 +23,21 @@
       </div>
     </div>
     <cart-item></cart-item>
+    <cart-item>
+      <cart-variant-item></cart-variant-item>
+      <cart-variant-item></cart-variant-item>
+    </cart-item>
   </div>
 </template>
 
 <script>
 import CartItem from "../../components/carts/CartItem";
+import CartVariantItem from "../../components/carts/CartVariantItem";
 export default {
   name: "PageCart",
   components: {
-    CartItem
+    CartItem,
+    CartVariantItem
   }
 }
 </script>
