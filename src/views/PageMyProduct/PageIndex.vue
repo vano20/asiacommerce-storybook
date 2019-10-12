@@ -243,7 +243,7 @@ import { BaseButton, ButtonGroup } from "../../components/ui/Buttons";
 import { InputGroup, InputText } from "../../components/ui/Inputs";
 import TheBadge from "../../components/ui/TheBadge";
 import DynamicIcon from "../../components/ui/DynamicIcon";
-import ProductImageItem from "../../components/image/ProductImageItem";
+import ProductImageItem from "../../components/images/ProductImageItem";
 import TheSwitch from "../../components/ui/TheSwitch";
 import AppMessage from "../../components/ui/AppMessage";
 import ProductVariantItem from "../../components/product-variant/ProductVariantItem";
