@@ -1,6 +1,9 @@
 import PageCatalog from "../views/PageCatalog/PageIndex";
-import PageMyProduct from "../views/PageMyProduct/PageIndex"
-import PageMyOrder from "../views/PageMyOrder/PageIndex"
+import PageMyProduct from "../views/PageMyProduct/PageIndex";
+import PageMyOrder from "../views/PageMyOrder/PageIndex";
+import PagePlatform from "../views/PagePlatform/PageIndex";
+import PageTracking from "../views/PageTracking/PageIndex";
+import PageSetting from "../views/PageSetting/PageIndex";
 
 export default [
   {
@@ -32,9 +35,9 @@ export default [
     path: "/platforms",
     title: "Platforms",
     icon: "platforms",
-    name: "PagePlatforms",
+    name: "PagePlatform",
     meta: { layout: "has-auth" },
-    // component: () => import("@/views/PagePlatforms/PageIndex.vue")
+    component: PagePlatform
   },
   {
     path: "/tracking",
@@ -42,7 +45,7 @@ export default [
     icon: "tracking",
     name: "PageTracking",
     meta: { layout: "basic" },
-    // component: () => import("@/views/PagePlatforms/PageIndex.vue")
+    component: PageTracking
   },
   {
     path: "/setting",
@@ -50,6 +53,6 @@ export default [
     icon: "setting",
     name: "PageSetting",
     meta: { layout: "has-auth" },
-    // component: () => import("@/views/PagePlatforms/PageIndex.vue")
+    component: PageSetting
   }
 ];
