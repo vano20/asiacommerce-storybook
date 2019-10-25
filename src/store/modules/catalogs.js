@@ -44,13 +44,14 @@ export default {
             original_url: products.attributes.original_url,
             image: products.attributes.image,
             sale_price: products.attributes.sale_price,
-            supplier_name: isEmpty(products.relationships.supplier) ? null : productsIncluded.relationships[products.relationships.supplier[0].id].attributes.name
+            supplier_name: isEmpty(products.relationships.supplier)
+              ? null
+              : productsIncluded.supplier[products.relationships.supplier[0].id].attributes.name
           };
           commit("ITEMS_ADD", addProducts);
         });
-
       } catch (error) {
-        console.log("error fetch product", error)
+        console.log("error fetch product", error);
       }
     }
   },
