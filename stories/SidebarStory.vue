@@ -6,8 +6,7 @@
       :key="idx"
       :item="menu"
     />
-    
-
+ 
     <div class="bg-gray-100 p-4 flex items-center">
       <div class="flex-none">
         <figure class="w-8 ">

@@ -46,14 +46,19 @@ export default {
   watch: {
     sideBar() {
       console.log("sidebar state change", this.sideBar);
-    }
+    },
+    // sideBarShrink() {
+    //   console.log("sidebar shrink state change", this.sideBarShrink);
+    // }
   },
   computed: {
     ...mapGetters({
-      sideBar: "getSideBar"
+      sideBar: "getSideBar",
+      sideBarShrink : "getSideBarShrink",
     }),
+
     getSideBarState() {
-      return this.sideBar ? "sidebar-open" : "sidebar";
+      return this.sideBar ? ["sidebar-open", "sidebar-shrink"] : ["sidebar", "sidebar-shrink"];
     }
   }
   // beforeCreate () {

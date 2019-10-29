@@ -19,6 +19,7 @@
         v-for="(item, idx) in routes.slice(0, 4)"
         :key="idx"
         :item="item"
+        :sidebarswitch="sidebarSwitch"
       />
       <div 
         class="h-6 border-b border-gray-200"
@@ -27,6 +28,7 @@
         v-for="(item, idx) in routes.slice(4, 5)"
         :key="idx + 223"
         :item="item"
+        :sidebarswitch="sidebarSwitch"
       />
       <!-- <sidebar-menu-item /> -->
       <!-- <li v-for="(route, idx) in this.$router.options.routes" :index="idx">
@@ -43,6 +45,7 @@
           v-for="(item, idx) in routes.slice(5)"
           :key="idx + 112"
           :item="item"
+          :sidebarswitch="sidebarSwitch"
         />
         <div
           class="absolute inset-y-0 right-0 py-3 px-2"
@@ -51,6 +54,7 @@
         >
           <the-switch
             v-model="sidebarSwitch"
+            @click="toggleSidebarShrink"
           />
         </div>
       </div>
@@ -63,6 +67,7 @@ import SidebarMenuItem from "./SidebarMenuItem";
 import NavbarBrand from "../navbar/NavbarBrand";
 import TheSwitch from "../ui/TheSwitch";
 import mainRoutes from "../../router/main-routes"
+import { mapActions } from "vuex";
 
 export default {
   name: "TheSidebar",
@@ -70,6 +75,11 @@ export default {
     SidebarMenuItem,
     NavbarBrand,
     TheSwitch
+  },
+  methods: {
+    ...mapActions({
+      toggleSidebar: "toggleSidebar"
+    })
   },
   data: () => ({
     routes: mainRoutes,
