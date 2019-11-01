@@ -7,8 +7,13 @@
     data-wenk-pos="right"
     class="text-gray-600 block relative hover:text-gray-700 hover:bg-primary-100 px-4 py-3"
   >
-    <dynamic-icon :icon="item.icon" />
-    <span class="inline-block pl-2">{{ item.title }}</span>
+    <div v-if="sidebarswitch">
+          <dynamic-icon :icon="item.icon" />
+          <span class="inline-block pl-2">{{ item.title }}</span>
+    </div>
+    <div v-else>
+          <dynamic-icon :icon="item.icon" />
+    </div>
   </router-link>
 </template>
 
@@ -23,6 +28,10 @@ export default {
   props: {
     item: {
       type: Object,
+      required: true
+    },
+    sidebarswitch: {
+      type: Boolean,
       required: true
     }
   }
