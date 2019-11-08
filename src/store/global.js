@@ -1,5 +1,5 @@
 export const state = {
-  sideBar: false,
+  sideBar: true,
   sideBarShrink: false,
 };
 

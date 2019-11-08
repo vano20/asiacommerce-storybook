@@ -7,7 +7,7 @@
         alt="Asiacomerce (ALI) logo"
       />
     </figure>
-    <base-button class="navbar-btn" @click="toggleSidebar">
+    <base-button v-if="sideBarShrink" class="navbar-btn" @click="toggleSidebar">
       <icon-menu />
     </base-button>
   </div>
@@ -17,13 +17,18 @@
 import { BaseButton } from "../ui/Buttons";
 import IconMenu from "../../../src/assets/icons/menu.svg";
 
-import { mapActions } from "vuex";
+import { mapActions, mapGetters } from "vuex";
 
 export default {
   name: "NavbarBrand",
   components: {
     BaseButton,
     IconMenu
+  },
+  computed: {
+    ...mapGetters({
+      sideBarShrink : "getSideBarShrink",
+    })
   },
   methods: {
     ...mapActions({

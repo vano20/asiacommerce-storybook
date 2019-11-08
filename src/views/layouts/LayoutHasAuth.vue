@@ -1,11 +1,11 @@
 <template>
-  <div class="layout has-auth-layout" :class="getSideBarState">
+  <div class="layout has-auth-layout" :class="{'sidebar-show' : sideBar, 'sidebar-shrink' : !sideBarShrink}">
     <headroom>
       <the-navbar />
     </headroom>
     <div class="flex">
       <transition name="slide-left">
-        <div class="flex-none bg-white z-10 sidebar-wrapper" v-if="sideBar">
+        <div class="flex-none bg-white z-10 sidebar-wrapper" v-show="sideBar">
           <affix
             class="sidebar-menu"
             scroll-affix
@@ -47,18 +47,18 @@ export default {
     sideBar() {
       console.log("sidebar state change", this.sideBar);
     },
-    // sideBarShrink() {
-    //   console.log("sidebar shrink state change", this.sideBarShrink);
-    // }
+    sideBarShrink() {
+      console.log("sidebar shrink state change", this.sideBarShrink);
+    }
   },
   computed: {
     ...mapGetters({
       sideBar: "getSideBar",
-      sideBarShrink : "getSideBarShrink",
+      sideBarShrink: "getSideBarShrink"
     }),
 
-    getSideBarState() {
-      return this.sideBar ? ["sidebar-open", "sidebar-shrink"] : ["sidebar", "sidebar-shrink"];
+    sidebarHideShow() {
+      return this.sideBar ? "sidebar-show" : "sidebar-hide";
     }
   }
   // beforeCreate () {
@@ -136,13 +136,46 @@ body {
 .layout {
 
   --sidebar-width: 220px;
+  --sidebar-shrink-width: 64px;
   @apply bg-gray-100;
 
-  .sidebar,
-  .sidebar-wrapper {
-    /* position: fixed; */
-    width: var(--sidebar-width);
+  &.sidebar-show {
+    .sidebar,
+    .sidebar-wrapper {
+      width: var(--sidebar-width);
+    }
+    >>> .sidebar-menu-item > [data-wenk] {
+      &:after {
+        display: none;
+      }
+    }
   }
+
+  &.sidebar-shrink {
+    .sidebar,
+    .sidebar-wrapper {
+      width: var(--sidebar-shrink-width);
+    }
+    >>> .sidebar-menu-item {
+      @apply text-center;
+
+      > [data-wenk] {
+        &:after {
+          display: block;
+        }
+      }
+    }
+    >>> .sidebar-menu-item-title {
+      display: none;
+    }
+  }
+    
+  
+  /* &.sidebar-show {
+    .sidebar-wrapper {
+      width: var(--sidebar-shrink-width);
+    }
+  } */
 
   main {
     /* margin-left: var(--sidebar-width); */
