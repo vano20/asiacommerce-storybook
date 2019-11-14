@@ -111,7 +111,7 @@ body {
 
   >>> .sidebar-main {
     /* background: orange; */
-    min-height: calc(100vh - 94px);
+    min-height: calc(100vh - 114px);
   }
 
 
@@ -167,6 +167,33 @@ body {
     }
     >>> .sidebar-menu-item-title {
       display: none;
+    }
+    >>> .sidebar-main {
+      min-height: calc(100vh - 160px);
+
+      .sidebar-avatar {
+        .avatar-text {
+          @apply absolute bg-gray-100 p-4;
+          min-width: 200px;
+          top: -1000px;
+          left: 60px;
+          box-shadow: 2px 0 8px 2px theme(colors.gray.500).08, 2px 0 2px theme(colors.gray.500).08;
+          
+        }
+
+        &:hover {
+
+          .avatar-text {
+            top: 0;
+            transition: top .08s;
+          }
+        }
+      }
+    }
+    >>> .sidebar-switch-wrapper {
+      /* top: auto; bottom: auto; left: 10px; */
+      position: relative;
+      margin-left: 9px;
     }
   }
     

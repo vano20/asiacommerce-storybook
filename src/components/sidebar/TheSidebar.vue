@@ -5,7 +5,7 @@
       class="sidebar-main"
     >
       <!-- <navbar-brand /> -->
-      <div class="bg-gray-100 p-4 flex items-center">
+      <div class="bg-gray-100 p-4 flex items-center sidebar-avatar relative">
         <div class="flex-none">
           <figure class="w-8 ">
             <img class="rounded-full" src="https://avatars0.githubusercontent.com/u/1776866?s=460&v=4" alt="">
@@ -47,7 +47,7 @@
           :item="item"
         />
         <div
-          class="absolute inset-y-0 right-0 py-3 px-2"
+          class="absolute inset-y-0 right-0 py-3 px-2 sidebar-switch-wrapper"
           data-wenk="Shrink sidebar"
           data-wenk-pos="top"
         >
@@ -98,6 +98,7 @@ export default {
 
 <style lang="css" scoped>
 .sidebar {
+  padding-bottom: 20px;
   &:before {
     content: "";
     position: absolute;
@@ -105,8 +106,8 @@ export default {
     height: 2px;
     background-color: white;
     top: -2px;
-
   }
+
   box-shadow: 2px 0 8px theme(colors.gray.500).08, 2px 0 2px theme(colors.gray.500).08;
   
 }
