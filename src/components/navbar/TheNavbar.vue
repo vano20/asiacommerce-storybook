@@ -14,12 +14,6 @@
         </input-group>
       </div>
       <div class="flex-none ml-2">
-        <base-button class="navbar-btn">
-          <IconCart />
-        </base-button>
-        <base-button class="navbar-btn" >
-          <IconBell />
-        </base-button>
         <dropdown
           has-custom-label
           trigger-class="navbar-cart-trigger"
@@ -46,7 +40,12 @@
           </dropdown-item>
           
         </dropdown>
-        <dropdown has-custom-label trigger-class="juamput" trigger-is-link>
+        <dropdown
+          has-custom-label
+          trigger-class="juamput"
+          trigger-is-link
+          right-dropdown
+        >
           <template #custom-label>
             <dynamic-icon icon="bell" />
           </template>

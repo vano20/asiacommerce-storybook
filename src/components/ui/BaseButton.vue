@@ -101,8 +101,9 @@ export default {
 
   &:hover,
   &.is-hover {
-    @apply bg-gray-100 border-gray-500 text-gray-800 no-underline;
+    @apply border-gray-500 text-gray-800 no-underline;
     box-shadow: 0 3px 6px theme(colors.gray.500).1, 0 2px 3px theme(colors.gray.500).2;
+    background-color: theme(colors.gray.200).55;
   }
 
   &:active,
@@ -139,7 +140,7 @@ export default {
   color: theme(colors.primary.500);
 
   &:hover {
-    @apply shadow-none text-primary-600 underline;
+    @apply shadow-none text-primary-600;
   }
 }
 
