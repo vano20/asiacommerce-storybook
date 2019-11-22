@@ -3,6 +3,7 @@ import Router from "vue-router";
 import mainRoutes from "./main-routes";
 
 import PageCart from "../views/PageCart/PageIndex";
+import PageNotification from "../views/PageNotification/PageIndex";
 
 // import mainRoutes from "./main-routes";
 
@@ -20,6 +21,12 @@ const baseRoutes = [
     name: "PageCart",
     meta: { layout: "has-auth" },
     component: PageCart
+  },
+  {
+    path: "/notification",
+    name: "PageNotification",
+    meta: { layout: "has-auth" },
+    component: PageNotification
   }
 ];
 
