@@ -1,7 +1,5 @@
 <template>
   <div class="">
-
-
     <!-- Category list -->
     <div class="-mx-4 mb-10 pt-10 shadow bg-white">
 
@@ -10,7 +8,7 @@
 
         <!-- breadcrumb of categories here -->
         <div class="category-breadcrumb flex-auto">
-          <breadcrumb-category />
+          <breadcrumb-category :categories="categories"/>
           <p class="inline-block pl-3">
             <span class="text-gray-500">
             "Keyword here"
@@ -35,11 +33,7 @@
             </input-radio>
           </button-group>
         </div>
-
-
       </div>
-
-
       <!-- <category category-selected="hotproducts" /> -->
       <category-list />
     </div>
@@ -86,9 +80,54 @@ export default {
     BreadcrumbCategory,
     ButtonGroup, InputRadio
   },
-  data() {
+  data: () => {
     return {
-      data: null,
+     categories: [
+        {
+          label: "Automotives",
+          icon: "automotive"
+        },
+        {
+          label: "Baby & Kids",
+          icon: "baby-kids"
+        },
+        {
+          label: "Electronics & Gadget",
+          icon: "electronic-gadget"
+        },
+        {
+          label: "Game & Anime",
+          icon: "game-anime"
+        },
+        {
+          label: "Houseware",
+          icon: "houseware"
+        },
+        {
+          label: "Lifestyle & Accessories",
+          icon: "lifestyle-accessory"
+        },
+        {
+          label: "Machinery & Industrial Parts",
+          icon: "machine-industry"
+        },
+        {
+          label: "Mens Fashion",
+          icon: "men-fashion"
+        },
+        {
+          label: "Office & Stationery",
+          icon: "office-stationery"
+        },
+        {
+          label: "Sport & Outdoor",
+          icon: "sport-outdoor"
+        },
+        {
+          label: "Women Fashion",
+          icon: "women-fashion"
+        },
+      ],
       categoryTypeValue: "wholesale",
     };
   },

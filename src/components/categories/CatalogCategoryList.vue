@@ -25,12 +25,14 @@
 <script>
 import {BaseButton} from "../ui/Buttons"
 import DynamicIcon from "../ui/DynamicIcon";
+// import { BreadcrumCategory } from "../breadcrumbs/BreadcrumbCategory"
 
 export default {
   name: "CatalogCategoryList",
   components: {
     BaseButton,
-    DynamicIcon
+    DynamicIcon,
+    // BreadcrumCategory
   },
   data: () => {
     return {
@@ -44,7 +46,7 @@ export default {
           icon: "baby-kids"
         },
         {
-          label: "Electroncs & Gadget",
+          label: "Electronics & Gadget",
           icon: "electronic-gadget"
         },
         {
