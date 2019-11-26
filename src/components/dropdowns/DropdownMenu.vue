@@ -41,7 +41,6 @@
       <div
         class="dropdown-menu absolute z-20 "
         :class="[rightDropdown ? 'right-0' : 'left-0']"
-        id="dropdown-menu2"
         role="menu"
         v-if="isActive"
       >

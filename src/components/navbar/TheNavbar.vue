@@ -29,6 +29,8 @@
           <template #custom-label>
             <dynamic-icon icon="cart" />
           </template>
+          
+          <!-- dropdown menu start -->
           <cart-dropdown-item />
           <cart-dropdown-item />
           <dropdown-item class="bg-gray-100">
@@ -43,24 +45,45 @@
               </div>
             </div>
           </dropdown-item>
-          
+          <!-- dropdown menu end -->
         </dropdown>
+
         <dropdown
           has-custom-label
           trigger-class="juamput"
           trigger-is-link
           right-dropdown
+          class="navbar-notification-wrapper"
         >
           <template #custom-label>
             <dynamic-icon icon="bell" />
           </template>
+
+          <!-- dropdown menu start -->
           <dropdown-item>
-            halo
+            <div class="flex items-center">
+              <div class="flex-auto">
+                Notification
+              </div>
+              <div class="flex-none">
+                <a href="#">
+                  Mark all as read
+                </a>
+              </div>
+            </div>
           </dropdown-item>
+          <notification-item
+            class="dropdown-item"
+            v-for="item in notifications"
+            :key="item.id"
+            :item="item"
+            :type="item.type"
+            :is-read="item.read"
+          />
           <dropdown-item href="#">
-            This is a link
+            View all notification
           </dropdown-item>
-          
+          <!-- dropdown menu end-->
         </dropdown>
       </div>
     </div>
@@ -78,6 +101,10 @@ import CartDropdownItem from "../../components/carts/CartDropdownItem"
 import IconCart from "../../../src/assets/icons/cart.svg";
 import IconBell from "../../../src/assets/icons/bell.svg";
 import IconSearch from "../../../src/assets/icons/search.svg";
+import notificationItem from "../../components/notifications/NotificationItem";
+
+// mockup data here. Should be removed when handle with real data
+import notificationMockJson from "../../mocks/notifications.json";
 
 export default {
   name: "TheNavbar",
@@ -90,9 +117,15 @@ export default {
     DynamicIcon,
     NavbarBrand,
     BaseButton,
+    notificationItem,
     IconSearch,
     IconCart,
     IconBell
+  },
+  data: () => {
+    return {
+      notifications: notificationMockJson
+    }
   }
 };
 </script>
@@ -138,6 +171,13 @@ button.navbar-btn {
 
   >>> .dropdown-menu {
     width: 460px;
+  }
+}
+
+.navbar-notification-wrapper {
+
+  >>> .dropdown-menu {
+    width: 400px;
   }
 }
 </style>
