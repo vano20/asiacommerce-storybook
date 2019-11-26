@@ -1,13 +1,13 @@
 <template>
-  <div class="flex-auto items-center">
-    <figure class="px-2 py-1 inline-block" style="vertical-align:middle;">
+  <div class="navbar-brand flex items-center">
+    <figure class="px-2 py-1 flex-auto" style="vertical-align:middle;">
       <img
         src="https://ali.asiacommerce.net/img/ali-logo-asiacommerce-small.5db1336e.png"
         class="h-10"
         alt="Asiacomerce (ALI) logo"
       />
     </figure>
-    <base-button v-if="sideBarShrink" class="navbar-btn" @click="toggleSidebar">
+    <base-button v-if="sideBarShrink" class="navbar-btn flex-none" @click="toggleSidebar">
       <icon-menu />
     </base-button>
   </div>
@@ -37,3 +37,10 @@ export default {
   }
 };
 </script>
+
+<style lang="css" scoped>
+.navbar-brand {
+  width: 220px;
+}
+
+</style>

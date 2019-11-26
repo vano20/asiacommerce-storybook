@@ -2,7 +2,7 @@
   <div class="page-notification">
     <!-- <notification-item /> -->
     <div class="w-3/5 mx-auto shadow bg-white my-8 rounded-lg">
-      <div class="post__item" v-responsive="{ small: el => el.width <= 500 }">
+      <div class="post__item" v-responsive="{ small: el => el.width <= 440 }">
         <div class="post__text">responsive</div>
       </div>
       <div class="px-4 py-3 flex items-center border-b border-gray-200">

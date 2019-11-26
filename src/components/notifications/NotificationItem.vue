@@ -125,25 +125,25 @@ export default {
     &-icon-wrapper {
 
       .is-info & {
-        background: theme(colors.info.200);
+        background: theme(colors.info.100);
         svg {
           @apply w-6 h-6 text-info-400;
         }
       }
       .is-paid & {
-        background: theme(colors.success.200);
+        background: theme(colors.success.100);
         svg {
           @apply text-success-400;
         }
       }
       .is-unpaid & {
-        background: theme(colors.danger.200);
+        background: theme(colors.danger.100);
         svg {
           @apply text-danger-400;
         }
       }
       .is-tracking & {
-        background: theme(colors.accent.200);
+        background: theme(colors.accent.100);
         svg {
           @apply text-accent-400;
         }

@@ -1,7 +1,12 @@
 <template>
   <div class="shadow navbar bg-white"> <!-- wrapper -->
     <div class="flex items-center pr-4"> <!-- inner -->
-      <navbar-brand />
+      <div class="flex-none items-center">
+        <navbar-brand />
+      </div>
+      <div class="flex-auto ml-4">
+        Page title here
+      </div>
       <div class="flex-none">
         <input-group icon-inside class="navbar-input">
           <template slot="prepend">
