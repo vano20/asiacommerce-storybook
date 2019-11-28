@@ -4,6 +4,7 @@ import mainRoutes from "./main-routes";
 
 import PageCart from "../views/PageCart/PageIndex";
 import PageNotification from "../views/PageNotification/PageIndex";
+import PageProductDetail from "../views/PageProductDetail/PageIndex";
 
 // import mainRoutes from "./main-routes";
 
@@ -27,6 +28,12 @@ const baseRoutes = [
     name: "PageNotification",
     meta: { layout: "has-auth" },
     component: PageNotification
+  },
+  {
+    path: "/product-detail",
+    name: "PageProductDetail",
+    meta: { layout: "has-auth" },
+    component: PageProductDetail
   }
 ];
 

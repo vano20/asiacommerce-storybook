@@ -42,7 +42,7 @@
 import { BaseButton } from "../ui/Buttons";
 import DynamicIcon from "../ui/DynamicIcon";
 import { DropdownMenu, DropdownMenuItem } from "../dropdowns"
-import { CatalogCategoryList } from "../categories/CatalogCategoryList"
+import CatalogCategoryList from "../categories/CatalogCategoryList"
 
 export default {
   name: "BreadcrumbCategory",

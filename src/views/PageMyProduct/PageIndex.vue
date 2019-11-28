@@ -271,7 +271,7 @@ import DynamicIcon from "../../components/ui/DynamicIcon";
 import ProductImageItem from "../../components/images/ProductImageItem";
 import TheSwitch from "../../components/ui/TheSwitch";
 import AppMessage from "../../components/ui/AppMessage";
-import ProductVariantItem from "../../components/product-variant/ProductVariantItem";
+import ProductVariantItem from "../../components/products/ProductVariantItem";
 import { quillEditor } from 'vue-quill-editor'
 import 'quill/dist/quill.core.css'
 import 'quill/dist/quill.snow.css'
