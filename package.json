@@ -30,6 +30,7 @@
     "tailwindcss": "^1.1.1",
     "vue": "^2.6.10",
     "vue-affix": "^0.5.2",
+    "vue-agile": "^1.0.11",
     "vue-content-loading": "^1.6.0",
     "vue-headroom": "^0.10.1",
     "vue-product-carousel": "^1.2.0",

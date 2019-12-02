@@ -82,7 +82,7 @@ export default {
   },
   data: () => {
     return {
-     categories: [
+      categories: [
         {
           label: "Automotives",
           icon: "automotive"

@@ -2,23 +2,37 @@
   <div class="shadow navbar bg-white"> <!-- wrapper -->
     <div class="flex items-center pr-4"> <!-- inner -->
       <div class="flex-none items-center">
-        <navbar-brand />
+        <div class="hidden sm:block">
+          <navbar-brand />
+        </div>
+        <div class="sm:hidden py-2 ml-1">
+          <base-button class="navbar-button">
+            <dynamic-icon icon="menu" />
+          </base-button>
+        </div>
       </div>
       <div class="flex-auto ml-4">
         Page title here
       </div>
       <div class="flex-none">
-        <input-group icon-inside class="navbar-input">
-          <template slot="prepend">
-            <icon-search />
-          </template>
-          <input-text placeholder="Search something" />
-          <template slot="append">
-            <base-button>Search</base-button>
-          </template>
-        </input-group>
+        <div
+          class="hidden sm:block"
+        >
+          <input-group icon-inside class="navbar-input">
+            <template slot="prepend">
+              <icon-search />
+            </template>
+            <input-text placeholder="Search something" />
+            <template slot="append">
+              <base-button>Search</base-button>
+            </template>
+          </input-group>
+        </div>
       </div>
       <div class="flex-none ml-2">
+        <base-button is-link class="sm:hidden">
+          <dynamic-icon icon="search" />
+        </base-button>
         <dropdown
           has-custom-label
           trigger-class="navbar-cart-trigger"

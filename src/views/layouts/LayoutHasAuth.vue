@@ -17,7 +17,7 @@
         </div>
       </transition>
       <div class="flex-auto">
-        <div class="main-container container mx-auto px-4" id="main-container">
+        <div class="main-container mx-auto px-4 w-full md:container" id="main-container">
           <main>
             <router-view />
           </main>

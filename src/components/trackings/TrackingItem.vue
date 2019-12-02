@@ -1,15 +1,18 @@
 <template>
-  <div class="tracking-item px-4 py-3 flex items-center">
+  <div class="tracking-item px-4 py-3 flex">
     <div class="tracking-node">
     </div>
     <div class="tracking-date">
-      Oct, 03 2019
+      Oct, 03 2019 <span class="text-gray-600">14:23:19</span>
     </div>
     <div class="tracking-status">
-      Departure
-    </div>
-    <div class="tracking-location">
-      Beijing, CN
+      <p>
+        On the way to port departure
+      </p>
+      <p>
+        <span class="text-gray-500">Comment:</span>
+        This is value of the comment.
+      </p>
     </div>
   </div>
 </template>
@@ -27,14 +30,15 @@ export default {
     &:before {
       @apply w-1 bg-gray-500 h-full absolute;
       content: "";
-      top: 50%;
+      top: 16px;
       z-index: 1;
-      left: 28px;
+      left: 20px;
     }
   }
 
   .tracking-node {
-    @apply absolute w-3 h-3 rounded-full bg-gray-100 border-2 border-gray-500 ml-2;
+    @apply absolute w-3 h-3 rounded-full bg-gray-100 border-2 border-gray-500;
     z-index: 1;
+    top:15px;
   }
 </style>

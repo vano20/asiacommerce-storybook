@@ -61,7 +61,7 @@
       <div class="product-item-content">
         <div class="product-item-content-header flex px-2 items-center">
           <div class="product-item-pricing flex-auto">
-            <p class="text-primary-500 text-lg">Rp {{ formatMoney(this.item.original_price) }} <span class="text-sm text-gray-400 line-through">Rp.{{ formatMoney(this.item.priceOld) }}</span></p>
+            <p class="text-accent-500 text-lg">Rp {{ formatMoney(this.item.original_price) }} <span class="text-sm text-gray-400 line-through">Rp.{{ formatMoney(this.item.priceOld) }}</span></p>
             <!-- <div class="text-sm px-1 bg-danger-500 text-white rounded">5%</div> -->
           </div>
           <div class="flex-none">
@@ -73,24 +73,29 @@
         <div class="product-item-content-main p-2">
           <div class="product-item-title h-10 overflow-hidden">
             <a :href="this.item.original_url" :title="this.item.name">
-              <span
+              <!-- <span
                 v-if="item.wholesale"
                 class="label is-pink"
               >
                 Wholesale
-              </span>
+              </span> -->
+              <badge
+                v-if="item.wholesale"
+                title="wholesale"
+                variant="pink"
+              />
               {{ this.item.name }}
             </a>
           </div>
         </div>
-        <div class="product-item-content-footer p-2 border-t-2 border-gray-100">
+        <!-- <div class="product-item-content-footer p-2 border-t-2 border-gray-100">
           <a href="#0" class="product-item-seller flex truncate">
             <img src="https://img12.jd.id/zhipu/nHBfsgAALwAAABsAKfI39AAABbA.png" alt="" class="product-item-seller-pic flex-none mr-2 w-5 rounded shadow border border-gray-300">
             <p class="product-item-seller-name flex-none text-gray-500">
               {{ item.seller }}
             </p>
           </a>
-        </div>
+        </div> -->
 
         <!-- <div
           class="product-item-hover absolute z-10"
@@ -119,12 +124,14 @@
 import { BaseButton } from "../ui/Buttons"
 import IconFire from "../../../src/assets/icons/fire.svg";
 import IconImportProduct from "../../../src/assets/icons/import-product.svg";
+import TheBadge from "../ui/TheBadge";
 
 import { accountingHelperMixin } from "../../helper/helperMethods"
 
 export default {
   name: "card-item",
   components: {
+    Badge: TheBadge,
     BaseButton,
     IconFire,
     IconImportProduct
@@ -178,8 +185,8 @@ export default {
     padding-right: .3rem; */
 
     & > .card {
-      box-shadow:  0px 1px 2px 1px theme(colors.success.300);
-      @apply border border-success-400;
+      box-shadow:  0px 1px 2px 1px theme(colors.accent.300);
+      @apply border border-accent-400;
     }
   } 
 

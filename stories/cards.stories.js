@@ -5,10 +5,10 @@ import CardItem from "../src/components/cards/CardItem";
 
 export const item = {
   id: "1",
-  title: "Picking up some small pebbles, he dropped them into the pitcher one by one",
+  name: "Picking up some small pebbles, he dropped them into the pitcher one by one",
   seller: "Seller name should be here",
   image: "http://placekitten.com/g/600/600",
-  price: 94415.532,
+  original_price: 94415.532,
   priceOld: 124533.53,
   hotProduct: false,
   imported: false,

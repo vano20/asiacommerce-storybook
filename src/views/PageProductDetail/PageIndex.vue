@@ -6,60 +6,159 @@
       </div>
     </div>
     
-    <div class="w-full shadow flex mx-auto">
-      <div class="flex-none relative">
-          <ProductZoomer :base-images="images" :base-zoomer-options="zoomerOptions"/>
-        
-      </div>
-      <div class="flex-auto">
-        <h1 class="text-lg">Meat meat sauce original mouse pad trumpet cute girl cartoon pad table home writing desk surface desk pad</h1>
-        <div>
-          <span class="badge">
-            Retail
-          </span>
-          <p class="inline-block">Minimum quantity: 1</p>
+    <div class="w-full shadow flex mx-auto bg-white">
+      <div class="flex-none product-image-gallery">
+        <div class="w-fulsl">
+          <agile class="main" ref="main" :fade="true" :as-nav-for="asNavFor1" :options="options1">
+            <div
+              class="slide"
+              v-for="(slide, idx) in slides"
+              :key="idx"
+              :class="`slide--${idx}`"
+            >
+              <img :src="slide" >
+            </div>
+          </agile>
+          <agile class="thumbnails" ref="thumbnails" :options="options2" :as-nav-for="asNavFor2">
+            <div
+              class="slide slide--thumbnail"
+              v-for="(slide, idx) in slides"
+              :key="idx"
+              :class="`slide--${idx}`"
+              @click="$refs.thumbnails.goTo(idx)"
+            >
+              <img :src="slide">
+            </div>
+            <template slot="prevButton">
+              prv
+            </template>
+            <template slot="nextButton">
+              nxt
+            </template>
+          </agile>
         </div>
-        <div class="flex exposure">
-          <label class="flex-none w-32 expousure-label">
-            Info
-          </label>
-          <div class="flex-auto exposure-content">
-            Weight: .2kg choose category
+      </div>
+      <div class="flex-auto p-4">
+        <h1 class="text-xl">Meat meat sauce original mouse pad trumpet cute girl cartoon pad table home writing desk surface desk pad</h1>
+        <div class="py-2">
+          <badge variant="primary" title="Retail" />
+          <badge variant="info">
+            Minimum quantity: <strong>1</strong>
+          </badge>
+        </div>
+        <div class="product-summary has-prices">
+          <p class="text-gray-500 py-1">Price: <span class="text-gray-700">Rp.435.356,32</span></p>
+          <div class="flex-auto product-summary-content flex -ml-2">
+            <div class="flex-none mx-2">
+              <span class="">< 10 <span class="text-gray-600">pcs</span></span><br>
+              <strong class="text-accent-500">Rp.435.356,32</strong>
+            </div>
+            <div class="flex-none mx-2">
+              <span class="">11 - 999 <span class="text-gray-600">pcs</span></span><br>
+              <strong class="text-accent-500">Rp.435.356,32</strong>
+            </div>
+            <div class="flex-none mx-2">
+              <span class="">1000 > <span class="text-gray-600">pcs</span></span><br>
+              <strong class="text-accent-500">Rp.435.356,32</strong>
+            </div>
           </div>
         </div>
-        <div class="flex exposure">
-          <label class="flex-none w-32 expousure-label">
-            Color classification
-          </label>
-          <div class="flex-auto exposure-content">
+        <div class="product-summary lg:hidden">
+          <p class="text-gray-500 py-1 uppercase">Info</p>
+          <div class="product-summary-content">
+            <span class="text-gray-500">
+              Weight:
+            </span>
+            0.6kg
+            from 
+            <a href="#">Sneaker <dynamic-icon icon="caret-down" /></a>
+            rule
+            <a href="">
+              <dynamic-icon icon="info" />
+            </a>
+          </div>
+        </div>
+        <p class="uppercase text-gray-600 pt-3">Product variant</p>
+        <div class="product-summary -mt-1">
+          <p class="text-gray-500 py-1">Color Spesification: <span class="text-gray-700">Electric Blue</span></p>
+          <div class="flex-auto product-summary-content">
             <ul class="inline-block">
               <li>
-                <base-button>
-                  Jan
+                <base-button class="has-image">
+                  <div class="w-10 h-10">
+                    <div class="bg-cover w-full h-full" style="background-image: url('https://placeimg.com/41/41/any')" />
+                  </div>
+                </base-button>
+              </li>
+              <li>
+                <base-button class="has-image is-chosen">
+                  <div class="w-10 h-10">
+                    <div class="bg-cover w-full h-full" style="background-image: url('https://placeimg.com/40/40/any')" />
+                  </div>
                 </base-button>
               </li>
               <li>
                 <base-button>
-                  cok
-                </base-button>
-              </li>
-              <li>
-                <base-button>
-                  cik
+                  Red Velvet
                 </base-button>
               </li>
             </ul>
           </div>
         </div>
-        <div class="flex exposure">
-          <label class="flex-none w-32 expousure-label">
-            Info
-          </label>
-          <div class="flex-auto exposure-content">
-            Weight: .2kg choose category
+        <div class="product-summary">
+          <p class="text-gray-500 py-1">Size: <span class="text-gray-700">Small</span></p>
+          <div class="flex-auto product-summary-content">
+            <ul class="inline-block">
+              <li>
+                <base-button>
+                  Small
+                </base-button>
+              </li>
+              <li>
+                <base-button>
+                  Medium
+                </base-button>
+              </li>
+              <li>
+                <base-button>
+                  Large
+                </base-button>
+              </li>
+            </ul>
           </div>
         </div>
+        <div class="-ml-1 mt-4">
+          <base-button class="mx-1" variant="primary" size="large" is-solid>add to cart</base-button>
+          <base-button class="mx-1" variant="primary" size="large">Push to shop</base-button>
+        </div>
       </div>
+      <div class="flex-none w-64 p-4 hidden lg:block">
+        <div class="border border-info-200 p-3 rounded sticky top-0">
+          <h6 class="uppercase text-gray-600">
+            Info
+          </h6>
+          <div class="py-1">
+            <p class="text-gray-500">Weight (estimated):</p>
+            <p class="font-semibold text-lg">0.68 kg</p>
+          </div>
+          <div class="py-1">
+            <p class="text-gray-500">Category rule:</p>
+            <a href="" class="border border-gray-300 rounded-lg cursor-pointer px-2 py-1 flex items-center">
+              <p class="flex-auto">
+                Sneaker
+              </p>
+              <div class="flex-none">
+                <dynamic-icon icon="pencil" />
+              </div>
+            </a>
+          </div>
+          <p class="text-sm text-gray-600 pt-2">These number are estimation of specific product weight (and also its CBM) based on our Category rule due to Custom Charge calculation</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="bg-white shadow my-4 p-4">
+      <p data-v-fd8dd378="" class="externalInfo"><table><tbody><tr><td>Listed year season</td><td> : </td><td>Winter of 2018</td></tr><tr><td>package volume</td><td> : </td><td>1</td></tr><tr><td>popular elements</td><td> : </td><td>Cross strap</td></tr><tr><td>Gross weight</td><td> : </td><td>1</td></tr><tr><td>Insole material</td><td> : </td><td>Artificial short plush</td></tr><tr><td>Item number</td><td> : </td><td>1990213</td></tr><tr><td>Style</td><td> : </td><td>Sports shoes</td></tr><tr><td>Brands</td><td> : </td><td>Fuzisha</td></tr><tr><td>Sales channel type</td><td> : </td><td>Pure e-commerce only online sales</td></tr><tr><td>Suitable</td><td> : </td><td>Youth 18-40 years old</td></tr><tr><td>Applicable scene</td><td> : </td><td>motion</td></tr><tr><td>Cortical features</td><td> : </td><td>shave</td></tr><tr><td>Help surface material</td><td> : </td><td>PU</td></tr><tr><td>Inner material</td><td> : </td><td>Artificial short plush</td></tr><tr><td>Closed way</td><td> : </td><td>Lace</td></tr><tr><td>pattern</td><td> : </td><td>Solid color</td></tr><tr><td>Sole material</td><td> : </td><td>Composite bottom</td></tr><tr><td>Opening depth</td><td> : </td><td>Deep mouth</td></tr><tr><td>Color Classification</td><td> : </td><td>White large cotton beige cotton white shoes beige single shoes</td></tr><tr><td>style</td><td> : </td><td>Korean version</td></tr><tr><td>Toe style</td><td> : </td><td>Round head</td></tr><tr><td>Heel height</td><td> : </td><td>Medium with 3-5cm</td></tr><tr><td>With the bottom style</td><td> : </td><td>Muffin bottom</td></tr><tr><td>size</td><td> : </td><td>353637383940</td></tr><tr><td>Shoe making process</td><td> : </td><td>Pressure shoes</td></tr></tbody></table></p>
     </div>
 
     <product-detail></product-detail>
@@ -68,173 +167,206 @@
 
 <script>
 import ProductDetail from "../../components/products/Productdetail";
-import { BaseButton, ButtonGroup } from "../../components/ui/Buttons";
+import theBadge from "../../components/ui/TheBadge";
+import { BaseButton } from "../../components/ui/Buttons";
+import DynamicIcon from "../../components/ui/DynamicIcon";
+import { VueAgile } from "vue-agile";
+
 export default {
-name: "PageProductDetail",
-components: {
+  name: "PageProductDetail",
+  components: {
+    agile: VueAgile,
+    badge: theBadge,
+    DynamicIcon,
     ProductDetail,
     BaseButton
   },
   data() {
     return {
-      images: {
-        thumbs: [
+      asNavFor1: [],
+      asNavFor2: [],
+      options1: {
+        dots: false,
+        fade: true,
+        navButtons: false
+      },
+      options2: {
+        dots: false,
+        navButtons: false,
+        slidesToShow: 3,
+        responsive: [
           {
-            id: 1,
-            url:
-              "https://yoohooworld.com/assets/images/vue_product_zoomer/thumbs/1.jpeg"
+            breakpoint: 600,
+            settings: {
+              slidesToShow: 5
+            }
           },
           {
-            id: 2,
-            url:
-              "https://yoohooworld.com/assets/images/vue_product_zoomer/thumbs/2.jpeg"
-          },
-          {
-            id: 3,
-            url:
-              "https://yoohooworld.com/assets/images/vue_product_zoomer/thumbs/3.jpeg"
-          },
-          {
-            id: 4,
-            url:
-              "https://yoohooworld.com/assets/images/vue_product_zoomer/thumbs/4.jpeg"
-          },
-          {
-            id: 5,
-            url:
-              "https://yoohooworld.com/assets/images/vue_product_zoomer/thumbs/5.jpeg"
-          },
-          {
-            id: 6,
-            url:
-              "https://yoohooworld.com/assets/images/vue_product_zoomer/thumbs/6.jpeg"
-          },
-          {
-            id: 7,
-            url:
-              "https://yoohooworld.com/assets/images/vue_product_zoomer/thumbs/7.jpeg"
-          },
-          {
-            id: 8,
-            url:
-              "https://yoohooworld.com/assets/images/vue_product_zoomer/thumbs/8.jpeg"
-          },
-          {
-            id: 9,
-            url:
-              "https://yoohooworld.com/assets/images/vue_product_zoomer/thumbs/9.jpeg"
-          }
-        ],
-        normal_size: [
-          {
-            id: 1,
-            url:
-              "https://yoohooworld.com/assets/images/vue_product_zoomer/normal_size/1.jpeg"
-          },
-          {
-            id: 2,
-            url:
-              "https://yoohooworld.com/assets/images/vue_product_zoomer/normal_size/2.jpeg"
-          },
-          {
-            id: 3,
-            url:
-              "https://yoohooworld.com/assets/images/vue_product_zoomer/normal_size/3.jpeg"
-          },
-          {
-            id: 4,
-            url:
-              "https://yoohooworld.com/assets/images/vue_product_zoomer/normal_size/4.jpeg"
-          },
-          {
-            id: 5,
-            url:
-              "https://yoohooworld.com/assets/images/vue_product_zoomer/normal_size/5.jpeg"
-          },
-          {
-            id: 6,
-            url:
-              "https://yoohooworld.com/assets/images/vue_product_zoomer/normal_size/6.jpeg"
-          },
-          {
-            id: 7,
-            url:
-              "https://yoohooworld.com/assets/images/vue_product_zoomer/normal_size/7.jpeg"
-          },
-          {
-            id: 8,
-            url:
-              "https://yoohooworld.com/assets/images/vue_product_zoomer/normal_size/8.jpeg"
-          },
-          {
-            id: 9,
-            url:
-              "https://yoohooworld.com/assets/images/vue_product_zoomer/normal_size/9.jpeg"
-          }
-        ],
-        large_size: [
-          {
-            id: 1,
-            url:
-              "https://yoohooworld.com/assets/images/vue_product_zoomer/large_size/1.jpeg"
-          },
-          {
-            id: 2,
-            url:
-              "https://yoohooworld.com/assets/images/vue_product_zoomer/large_size/2.jpeg"
-          },
-          {
-            id: 3,
-            url:
-              "https://yoohooworld.com/assets/images/vue_product_zoomer/large_size/3.jpeg"
-          },
-          {
-            id: 4,
-            url:
-              "https://yoohooworld.com/assets/images/vue_product_zoomer/large_size/4.jpeg"
-          },
-          {
-            id: 5,
-            url:
-              "https://yoohooworld.com/assets/images/vue_product_zoomer/large_size/5.jpeg"
-          },
-          {
-            id: 6,
-            url:
-              "https://yoohooworld.com/assets/images/vue_product_zoomer/large_size/6.jpeg"
-          },
-          {
-            id: 7,
-            url:
-              "https://yoohooworld.com/assets/images/vue_product_zoomer/large_size/7.jpeg"
-          },
-          {
-            id: 8,
-            url:
-              "https://yoohooworld.com/assets/images/vue_product_zoomer/large_size/8.jpeg"
-          },
-          {
-            id: 9,
-            url:
-              "https://yoohooworld.com/assets/images/vue_product_zoomer/large_size/9.jpeg"
+            breakpoint: 1000,
+            settings: {
+              navButtons: true
+            }
           }
         ]
       },
-      zoomerOptions: {
-        zoomFactor: 3,
-        pane: "pane",
-        hoverDelay: 300,
-        namespace: "zoomer-left",
-        move_by_click: false,
-        scroll_items: 4,
-        choosed_thumb_border_color: "#dd2c00",
-        scroller_position: "left"
-      }
+      slides: [
+        "https://images.unsplash.com/photo-1453831362806-3d5577f014a4?ixlib=rb-1.2.1&q=85&fm=jpg&crop=entropy&cs=srgb&w=1600&fit=max&ixid=eyJhcHBfaWQiOjE0NTg5fQ",
+        "https://images.unsplash.com/photo-1496412705862-e0088f16f791?ixlib=rb-1.2.1&q=85&fm=jpg&crop=entropy&cs=srgb&w=1600&fit=max&ixid=eyJhcHBfaWQiOjE0NTg5fQ",
+        "https://images.unsplash.com/photo-1506354666786-959d6d497f1a?ixlib=rb-1.2.1&q=85&fm=jpg&crop=entropy&cs=srgb&w=1600&fit=max&ixid=eyJhcHBfaWQiOjE0NTg5fQ",
+        "https://images.unsplash.com/photo-1455619452474-d2be8b1e70cd?ixlib=rb-1.2.1&q=85&fm=jpg&crop=entropy&cs=srgb&w=1600&fit=max&ixid=eyJhcHBfaWQiOjE0NTg5fQ",
+        "https://images.unsplash.com/photo-1504674900247-0877df9cc836?ixlib=rb-1.2.1&q=85&fm=jpg&crop=entropy&cs=srgb&w=1600&fit=max&ixid=eyJhcHBfaWQiOjE0NTg5fQ",
+        "https://images.unsplash.com/photo-1472926373053-51b220987527?ixlib=rb-1.2.1&q=85&fm=jpg&crop=entropy&cs=srgb&w=1600&fit=max&ixid=eyJhcHBfaWQiOjE0NTg5fQ",
+        "https://images.unsplash.com/photo-1497534547324-0ebb3f052e88?ixlib=rb-1.2.1&q=85&fm=jpg&crop=entropy&cs=srgb&w=1600&fit=max&ixid=eyJhcHBfaWQiOjE0NTg5fQ"
+      ]
     };
   },
-}
+  mounted() {
+    this.asNavFor1.push(this.$refs.thumbnails);
+    this.asNavFor2.push(this.$refs.main);
+  }
+};
 </script>
 
-<style>
+<style lang="css" scoped>
+.thumbnails {
+  margin: 10px -5px;
+  width: calc(100% + 10px);
+}
 
+.agile {
+
+    >>> &__nav-button {
+    background: transparent;
+		border: none;
+		color: #fff;
+		cursor: pointer;
+		font-size: 24px;
+		height: 100%;
+		position: absolute;
+		top: 0;
+		transition-duration: .3s;
+		width: 80px;
+
+    .thumbnails & {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+
+      &--prev {
+        left: -45px;
+      }
+
+      &--next {
+        right: -45px;
+      }
+    }
+
+    &:hover {
+      color: blue;
+    }
+  }
+
+  &__dot {
+    margin: 0 10px;
+
+    button {
+      background-color: #eee;
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+      display: block;
+      height: 10px;
+      font-size: 0;
+      line-height: 0;
+      margin: 0;
+      padding: 0;
+      transition-duration: .3s;
+      width: 10px;
+    }
+
+    &--current,
+    &:hover {
+      button {
+        background-color: #888;
+      }
+    }
+  }
+}
+
+.slide {
+  align-items: center;
+  box-sizing: border-box;
+  color: #fff;
+  display: flex;
+  height: 320px;
+  justify-content: center;
+
+  &--thumbnail {
+    cursor: pointer;
+    height: 66px;
+    padding: 0 5px;
+    transition: opacity .3s;
+
+    &:hover {
+      opacity: .75;
+    }
+  }
+
+  img {
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    width: 100%;
+  }
+
+}
+
+
+.product-image-gallery {
+  @apply p-4;
+  width: 360px;
+}
+
+
+.product-summary {
+  @apply py-2;
+
+  &.has-prices {
+    @apply items-center;
+  }
+
+  &-label {
+    @apply text-gray-500 w-40;
+  }
+}
+
+
+.product-summary-content {
+
+  ul {
+    @apply flex items-center -ml-1;
+
+    li {
+      @apply inline-flex;
+
+      .btn {
+        @apply mx-1;
+      }
+    }
+  }
+
+  .btn.has-image {
+    padding: 2px;
+  }
+
+}
+
+.is-chosen {
+  border-color: theme(colors.primary.500);
+  border-width: 2px;
+
+  &.btn.has-image {
+    padding: 1px;
+  }
+}
 </style>
