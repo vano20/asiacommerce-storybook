@@ -1,6 +1,9 @@
 <template>
-  <div v-if="shown">
-    Hello World
+  <div v-if="shown" class="slidebar">
+    <div class="slidebar-backdrop" />
+    <div class="slidebar-inner">
+      Slidebar here
+    </div>
   </div>
 </template>
 

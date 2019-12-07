@@ -6,7 +6,7 @@
           <navbar-brand />
         </div>
         <div class="sm:hidden py-2 ml-1">
-          <base-button class="navbar-button">
+          <base-button class="navbar-button" @click="toggleSlideBar">
             <dynamic-icon icon="menu" />
           </base-button>
         </div>
@@ -120,6 +120,8 @@ import notificationItem from "../../components/notifications/NotificationItem";
 // mockup data here. Should be removed when handle with real data
 import notificationMockJson from "../../mocks/notifications.json";
 
+import { mapMutations } from "vuex";
+
 export default {
   name: "TheNavbar",
   components: {
@@ -140,7 +142,12 @@ export default {
     return {
       notifications: notificationMockJson
     }
-  }
+  },
+  methods: {
+    ...mapMutations({
+      toggleSlideBar: 'TOGGLE_SLIDE_BAR'
+    })
+  },
 };
 </script>
 

@@ -24,12 +24,14 @@
         </div>
       </div>
     </div>
+    <slidebar :shown="slideBarState" />
   </div>
 </template>
 
 <script>
 import TheNavbar from "../../components/navbar/TheNavbar";
 import { TheSidebar } from "../../components/sidebar";
+import SlideBar from "../../components/slidebar/SlideBar";
 import { headroom } from "vue-headroom";
 
 import { mapGetters } from "vuex";
@@ -41,6 +43,7 @@ export default {
   components: {
     headroom,
     TheNavbar,
+    slidebar: SlideBar,
     TheSidebar
   },
   watch: {
@@ -54,7 +57,8 @@ export default {
   computed: {
     ...mapGetters({
       sideBar: "getSideBar",
-      sideBarShrink: "getSideBarShrink"
+      sideBarShrink: "getSideBarShrink",
+      slideBarState: 'getSlideBar'
     }),
 
     sidebarHideShow() {

@@ -162,7 +162,7 @@
     </div>
 
     <product-detail></product-detail>
-    <slide-bar :shown="slideBarState" />
+    <!-- <slide-bar :shown="slideBarState" /> -->
   </div>
 </template>
 
