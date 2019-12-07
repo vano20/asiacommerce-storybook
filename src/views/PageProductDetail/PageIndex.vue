@@ -128,7 +128,7 @@
           </div>
         </div>
         <div class="-ml-1 mt-4">
-          <base-button class="mx-1" variant="primary" size="large" is-solid>add to cart</base-button>
+          <base-button class="mx-1" variant="primary" size="large" is-solid @click="toggleSlideBar">add to cart</base-button>
           <base-button class="mx-1" variant="primary" size="large">Push to shop</base-button>
         </div>
       </div>
@@ -162,15 +162,19 @@
     </div>
 
     <product-detail></product-detail>
+    <slide-bar :shown="slideBarState" />
   </div>
 </template>
 
 <script>
 import ProductDetail from "../../components/products/Productdetail";
+import SlideBar from "../../components/slidebar/SlideBar";
 import theBadge from "../../components/ui/TheBadge";
 import { BaseButton } from "../../components/ui/Buttons";
 import DynamicIcon from "../../components/ui/DynamicIcon";
 import { VueAgile } from "vue-agile";
+
+import { mapState, mapMutations } from 'vuex'
 
 export default {
   name: "PageProductDetail",
@@ -179,7 +183,8 @@ export default {
     badge: theBadge,
     DynamicIcon,
     ProductDetail,
-    BaseButton
+    BaseButton,
+    SlideBar
   },
   data() {
     return {
@@ -219,6 +224,16 @@ export default {
         "https://images.unsplash.com/photo-1497534547324-0ebb3f052e88?ixlib=rb-1.2.1&q=85&fm=jpg&crop=entropy&cs=srgb&w=1600&fit=max&ixid=eyJhcHBfaWQiOjE0NTg5fQ"
       ]
     };
+  },
+  computed: {
+    ...mapState({
+      slideBarState: 'slideBar'
+    })
+  },
+  methods: {
+    ...mapMutations({
+      toggleSlideBar: 'TOGGLE_SLIDE_BAR'
+    })
   },
   mounted() {
     this.asNavFor1.push(this.$refs.thumbnails);
