@@ -49,7 +49,7 @@
         <div
           class="absolute inset-y-0 right-0 py-3 px-2 sidebar-switch-wrapper"
           data-wenk="Shrink sidebar"
-          data-wenk-pos="top"
+          data-wenk-pos="right"
         >
           <the-switch
             v-model="sidebarSwitch"

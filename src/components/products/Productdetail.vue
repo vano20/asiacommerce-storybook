@@ -1,6 +1,6 @@
 <template>
   <div class="product-detail">
-    product detail iki cok
+    product detail component here
   </div>
 </template>
 

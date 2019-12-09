@@ -24,7 +24,9 @@
         </div>
       </div>
     </div>
-    <slidebar :shown="slideBarState" />
+    <slidebar :shown="slideBarState">
+      <the-sidebar />
+    </slidebar>
   </div>
 </template>
 

@@ -158,11 +158,45 @@
     </div>
 
     <div class="bg-white shadow my-4 p-4">
-      <p data-v-fd8dd378="" class="externalInfo"><table><tbody><tr><td>Listed year season</td><td> : </td><td>Winter of 2018</td></tr><tr><td>package volume</td><td> : </td><td>1</td></tr><tr><td>popular elements</td><td> : </td><td>Cross strap</td></tr><tr><td>Gross weight</td><td> : </td><td>1</td></tr><tr><td>Insole material</td><td> : </td><td>Artificial short plush</td></tr><tr><td>Item number</td><td> : </td><td>1990213</td></tr><tr><td>Style</td><td> : </td><td>Sports shoes</td></tr><tr><td>Brands</td><td> : </td><td>Fuzisha</td></tr><tr><td>Sales channel type</td><td> : </td><td>Pure e-commerce only online sales</td></tr><tr><td>Suitable</td><td> : </td><td>Youth 18-40 years old</td></tr><tr><td>Applicable scene</td><td> : </td><td>motion</td></tr><tr><td>Cortical features</td><td> : </td><td>shave</td></tr><tr><td>Help surface material</td><td> : </td><td>PU</td></tr><tr><td>Inner material</td><td> : </td><td>Artificial short plush</td></tr><tr><td>Closed way</td><td> : </td><td>Lace</td></tr><tr><td>pattern</td><td> : </td><td>Solid color</td></tr><tr><td>Sole material</td><td> : </td><td>Composite bottom</td></tr><tr><td>Opening depth</td><td> : </td><td>Deep mouth</td></tr><tr><td>Color Classification</td><td> : </td><td>White large cotton beige cotton white shoes beige single shoes</td></tr><tr><td>style</td><td> : </td><td>Korean version</td></tr><tr><td>Toe style</td><td> : </td><td>Round head</td></tr><tr><td>Heel height</td><td> : </td><td>Medium with 3-5cm</td></tr><tr><td>With the bottom style</td><td> : </td><td>Muffin bottom</td></tr><tr><td>size</td><td> : </td><td>353637383940</td></tr><tr><td>Shoe making process</td><td> : </td><td>Pressure shoes</td></tr></tbody></table></p>
+      <p class="externalInfo"><table><tbody><tr><td>Listed year season</td><td> : </td><td>Winter of 2018</td></tr><tr><td>package volume</td><td> : </td><td>1</td></tr><tr><td>popular elements</td><td> : </td><td>Cross strap</td></tr><tr><td>Gross weight</td><td> : </td><td>1</td></tr><tr><td>Insole material</td><td> : </td><td>Artificial short plush</td></tr><tr><td>Item number</td><td> : </td><td>1990213</td></tr><tr><td>Style</td><td> : </td><td>Sports shoes</td></tr><tr><td>Brands</td><td> : </td><td>Fuzisha</td></tr><tr><td>Sales channel type</td><td> : </td><td>Pure e-commerce only online sales</td></tr><tr><td>Suitable</td><td> : </td><td>Youth 18-40 years old</td></tr><tr><td>Applicable scene</td><td> : </td><td>motion</td></tr><tr><td>Cortical features</td><td> : </td><td>shave</td></tr><tr><td>Help surface material</td><td> : </td><td>PU</td></tr><tr><td>Inner material</td><td> : </td><td>Artificial short plush</td></tr><tr><td>Closed way</td><td> : </td><td>Lace</td></tr><tr><td>pattern</td><td> : </td><td>Solid color</td></tr><tr><td>Sole material</td><td> : </td><td>Composite bottom</td></tr><tr><td>Opening depth</td><td> : </td><td>Deep mouth</td></tr><tr><td>Color Classification</td><td> : </td><td>White large cotton beige cotton white shoes beige single shoes</td></tr><tr><td>style</td><td> : </td><td>Korean version</td></tr><tr><td>Toe style</td><td> : </td><td>Round head</td></tr><tr><td>Heel height</td><td> : </td><td>Medium with 3-5cm</td></tr><tr><td>With the bottom style</td><td> : </td><td>Muffin bottom</td></tr><tr><td>size</td><td> : </td><td>353637383940</td></tr><tr><td>Shoe making process</td><td> : </td><td>Pressure shoes</td></tr></tbody></table></p>
     </div>
 
-    <product-detail></product-detail>
+    <!-- <product-detail></product-detail> -->
     <!-- <slide-bar :shown="slideBarState" /> -->
+
+
+    <div class="bottom-bar sm:hidden fixed inset-x-0 bottom-0 bg-white border-t border-gray-200">
+      <div class="flex items-center pl-2">
+        <div class="flex-none px-4">
+          <p class="text-gray-500">
+            Min. qty
+          </p>
+          <strong>1</strong>
+        </div>
+        <div class="flex-auto w-full flex items-center">
+          <div class="w-1/2">
+            <div class="cursor-pointer text-white bg-accent-500 px-2 py-4 text-center">
+              <span class="">
+                <dynamic-icon icon="eye" />
+                Push to store
+              </span>
+            </div>
+          </div>
+          <div class="w-1/2">
+            <div
+              class="cursor-pointer text-white bg-primary-500 px-2 py-4 text-center"
+              @click="toggleSlideBar"
+            >
+              <span class="">
+                <dynamic-icon icon="eye" />
+                Add to cart
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
   </div>
 </template>
 
