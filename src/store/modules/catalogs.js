@@ -3,6 +3,7 @@ import isEmpty from "lodash/isEmpty";
 import forEach from "lodash/forEach";
 
 import CatalogServices from "../../services/catalog";
+import { apiHelper } from "../../helper/apiHelper";
 
 import categories from "./categories";
 
@@ -32,6 +33,9 @@ export default {
 
         const responseProducts = await CatalogServices.getCatalog(opts);
         const productsIncluded = responseProducts.data.included;
+
+        const returnNormalized = apiHelper.normalized(responseProducts.data);
+        console.log(returnNormalized);
         
         commit("ITEMS_RESET");
         
